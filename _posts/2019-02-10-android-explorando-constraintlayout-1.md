@@ -1,10 +1,6 @@
 ---
 published: true
 ---
-#### 
-
-# Android — Explorando ConstraintLayout (1)
-
 ## …el uso de un RelativeLayout con esteroides
 
 ![](https://cdn-images-1.medium.com/max/2400/1*g4C79VlwIMzJsfzs6DjVYw.png)
