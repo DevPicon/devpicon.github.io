@@ -138,7 +138,7 @@ post](https://medium.com/google-developers/room-rxjava-acb0cd4f3757) en la
 sección de Referencias.
 
 > **Update al 23 de abril del 2019: Inicialmente el artículo hacía referencia a la
-> necesidad de agregar una instancia de **`InstantTaskExecutorRule`**. para
+> necesidad de agregar una instancia de `InstantTaskExecutorRule`. para
 asegurarnos que las tareas se ejecuten instantáneamente, pero luego de la
 migración no le he visto mayor utilidad.**
 
