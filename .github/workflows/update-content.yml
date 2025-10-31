@@ -1,11 +1,7 @@
 name: Update Latest Content
 
 on:
-  # Ejecutar diariamente a las 8:00 AM UTC (3:00 AM Lima/Perú)
-  schedule:
-    - cron: '0 8 * * *'
-
-  # Permitir ejecución manual desde GitHub Actions tab
+  # Ejecución manual desde GitHub Actions tab
   workflow_dispatch:
 
 # Permisos necesarios para crear PRs y hacer commits
