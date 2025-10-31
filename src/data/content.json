@@ -1,0 +1,26 @@
+{
+  "latestContent": {
+    "video": {
+      "title": "Video más reciente (actualizar manualmente)",
+      "description": "Descripción del video",
+      "url": "https://youtube.com/@devpicon",
+      "date": "2025-10-31",
+      "image": ""
+    },
+    "podcast": {
+      "title": "Episodio más reciente (actualizar manualmente)",
+      "description": "Descripción del episodio",
+      "url": "https://open.spotify.com/show/1iyrRtXu0hrOQJyA7vdGiX",
+      "date": "2025-10-31",
+      "image": ""
+    },
+    "blog": {
+      "title": "Delegation Pattern in Kotlin",
+      "description": "",
+      "url": "https://devpicon.medium.com/delegation-pattern-in-kotlin-c08b976995ca?source=rss-5c60da6ae31c------2",
+      "date": "2025-01-27",
+      "image": "https://cdn-images-1.medium.com/max/1024/0*Uq-4GOFzTw6NT6kw"
+    }
+  },
+  "lastUpdated": "2025-10-31T18:05:08.636Z"
+}
