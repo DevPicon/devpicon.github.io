@@ -104,16 +104,92 @@ async function getLatestPodcastEpisode() {
   try {
     console.log('🎙️  Obteniendo último episodio de podcast...');
 
-    // Spotify requiere OAuth, alternativa: RSS si está disponible
-    // Por ahora usar datos de ejemplo
+    const clientId = process.env.SPOTIFY_CLIENT_ID;
+    const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
-    return {
-      title: 'Episodio más reciente (actualizar manualmente)',
-      description: 'Descripción del episodio',
-      url: `https://open.spotify.com/show/${CONFIG.spotify.showId}`,
-      date: new Date().toISOString().split('T')[0],
-      image: ''
-    };
+    if (!clientId || !clientSecret) {
+      console.log('⚠️  SPOTIFY_CLIENT_ID o SPOTIFY_CLIENT_SECRET no configurados');
+      console.log('   Tip: Configura las variables en .env.local o GitHub Secrets');
+      return {
+        title: 'Configura Spotify API para auto-actualizar',
+        description: 'Ve a API_SETUP.md para instrucciones',
+        url: `https://open.spotify.com/show/${CONFIG.spotify.showId}`,
+        date: new Date().toISOString().split('T')[0],
+        image: ''
+      };
+    }
+
+    // Paso 1: Obtener token de acceso usando Client Credentials Flow
+    const tokenUrl = 'https://accounts.spotify.com/api/token';
+    const credentials = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+
+    const tokenResponse = await new Promise((resolve, reject) => {
+      const https = require('https');
+      const postData = 'grant_type=client_credentials';
+
+      const options = {
+        hostname: 'accounts.spotify.com',
+        path: '/api/token',
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${credentials}`,
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Length': postData.length
+        }
+      };
+
+      const req = https.request(options, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => resolve(data));
+      });
+
+      req.on('error', reject);
+      req.write(postData);
+      req.end();
+    });
+
+    const { access_token } = JSON.parse(tokenResponse);
+
+    // Paso 2: Obtener episodios del show
+    const showUrl = `https://api.spotify.com/v1/shows/${CONFIG.spotify.showId}/episodes?limit=1`;
+    const episodesResponse = await new Promise((resolve, reject) => {
+      const https = require('https');
+      const url = new URL(showUrl);
+
+      const options = {
+        hostname: url.hostname,
+        path: url.pathname + url.search,
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${access_token}`
+        }
+      };
+
+      const req = https.request(options, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => resolve(data));
+      });
+
+      req.on('error', reject);
+      req.end();
+    });
+
+    const episodesData = JSON.parse(episodesResponse);
+
+    if (episodesData.items && episodesData.items.length > 0) {
+      const episode = episodesData.items[0];
+      return {
+        title: episode.name,
+        description: episode.description.substring(0, 200) || episode.name,
+        url: episode.external_urls.spotify,
+        date: episode.release_date,
+        image: episode.images[0]?.url || ''
+      };
+    }
+
+    return null;
   } catch (error) {
     console.error('❌ Error obteniendo episodio de podcast:', error.message);
     return null;
