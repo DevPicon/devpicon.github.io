@@ -96,6 +96,8 @@ Expected component organization under `/components` or `/src/components`:
 
 The following secrets must be configured in repository settings:
 - `YOUTUBE_API_KEY`: YouTube Data API v3 key for fetching channel videos
+- `SPOTIFY_CLIENT_ID`: Spotify API Client ID for fetching podcast episodes
+- `SPOTIFY_CLIENT_SECRET`: Spotify API Client Secret for OAuth authentication
 - Configure via: Repository Settings > Secrets and variables > Actions > New repository secret
 
 See `GITHUB_SECRETS_SETUP.md` and `YOUTUBE_QUICKSTART.md` for detailed setup instructions.
@@ -174,6 +176,18 @@ Include icons for: GitHub, LinkedIn, Instagram, Twitter (X), YouTube
 - Automated build and deploy on push to master branch
 - Site successfully deployed and live at https://devpicon.github.io
 - Custom domain picon.dev configured
+
+### Spotify API Integration (Latest - 2025-10-31)
+- Implemented complete Spotify API integration using Client Credentials OAuth flow
+- Added automatic token management and authentication
+- Configured SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in GitHub Secrets
+- Successfully fetches latest podcast episode with title, description, URL, date, and cover image
+- Tested and verified working correctly with show ID: 1iyrRtXu0hrOQJyA7vdGiX
+- All 4 content sources now fully automated:
+  - YouTube (video) - YouTube Data API v3
+  - Spotify (podcast) - Spotify Web API with OAuth
+  - Dev.to (blog) - Dev.to REST API
+  - Medium (blog) - Medium RSS feed
 
 ### Documentation Created
 - `API_SETUP.md`: Comprehensive API configuration guide

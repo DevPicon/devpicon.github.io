@@ -89,13 +89,20 @@ public/
 | Source | API/Method | Update Frequency |
 |--------|-----------|------------------|
 | YouTube | Data API v3 | Manual trigger |
+| Spotify | Web API + OAuth | Manual trigger |
 | Dev.to | REST API | Manual trigger |
 | Medium | RSS Feed | Manual trigger |
 
 ### YouTube Configuration
 - **Channel ID**: `UCX9NJ471o7Wie1DQe94RVIg`
 - **API Key**: Stored in GitHub Secrets
-- **Fetch**: 3 most recent videos
+- **Fetch**: Most recent video
+
+### Spotify Configuration
+- **Show ID**: `1iyrRtXu0hrOQJyA7vdGiX`
+- **Client ID & Secret**: Stored in GitHub Secrets
+- **Auth Method**: Client Credentials OAuth flow
+- **Fetch**: Latest podcast episode with metadata
 
 ## GitHub Actions
 
@@ -200,7 +207,9 @@ const response = await fetch(
 
 Required for GitHub Actions:
 ```bash
-YOUTUBE_API_KEY=your_api_key_here
+YOUTUBE_API_KEY=your_youtube_api_key
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 ```
 
 **Setup**: Repository Settings → Secrets and variables → Actions

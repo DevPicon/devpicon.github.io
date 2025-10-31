@@ -95,7 +95,14 @@ npm start
 - **Channel ID**: UCX9NJ471o7Wie1DQe94RVIg
 - **Endpoint**: `https://www.googleapis.com/youtube/v3/search`
 - **Authentication**: API key stored in GitHub Secrets
-- **Fetches**: 3 most recent videos from personal channel
+- **Fetches**: Most recent video from personal channel
+
+### Spotify Web API
+- **Show ID**: 1iyrRtXu0hrOQJyA7vdGiX
+- **Endpoint**: `https://api.spotify.com/v1/shows/{id}/episodes`
+- **Authentication**: Client Credentials OAuth flow (SPOTIFY_CLIENT_ID + SPOTIFY_CLIENT_SECRET)
+- **Token Endpoint**: `https://accounts.spotify.com/api/token`
+- **Fetches**: Latest podcast episode with metadata and cover art
 
 ### Dev.to API
 - **Endpoint**: `https://dev.to/api/articles?username=devpicon`
@@ -186,7 +193,11 @@ basePath: ''              // Custom domain configured
 1. **API Keys**: Store in GitHub Secrets, never commit to repository
 2. **Workflow Permissions**: Update Content workflow creates PRs (not direct push)
 3. **Manual Trigger**: Content updates require manual approval
-4. **Environment Variables**: Accessed via `process.env.YOUTUBE_API_KEY`
+4. **Environment Variables**:
+   - `process.env.YOUTUBE_API_KEY` - YouTube Data API
+   - `process.env.SPOTIFY_CLIENT_ID` - Spotify Client ID
+   - `process.env.SPOTIFY_CLIENT_SECRET` - Spotify Client Secret
+5. **OAuth Flow**: Spotify uses Client Credentials flow with automatic token management
 
 ## Performance Metrics
 
