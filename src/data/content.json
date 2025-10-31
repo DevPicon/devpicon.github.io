@@ -1,0 +1,25 @@
+{
+  "latestContent": {
+    "video": {
+      "title": "Introducción a Jetpack Compose",
+      "description": "Aprende los fundamentos de Jetpack Compose y cómo crear interfaces de usuario modernas en Android.",
+      "url": "https://youtube.com/@devpicon",
+      "date": "2024-10-29",
+      "image": ""
+    },
+    "podcast": {
+      "title": "El Futuro del Desarrollo Móvil",
+      "description": "Discutimos las tendencias emergentes en el desarrollo móvil y qué esperar en los próximos años.",
+      "url": "https://open.spotify.com/show/tu-podcast-id",
+      "date": "2024-10-24",
+      "image": ""
+    },
+    "blog": {
+      "title": "Clean Architecture en Android",
+      "description": "Una guía completa sobre cómo implementar Clean Architecture en tus proyectos Android.",
+      "url": "https://dev.to/devpicon",
+      "date": "2024-10-28",
+      "image": ""
+    }
+  }
+}
