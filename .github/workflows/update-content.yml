@@ -1,0 +1,79 @@
+name: Update Latest Content
+
+on:
+  # Ejecutar diariamente a las 8:00 AM UTC (3:00 AM Lima/Perú)
+  schedule:
+    - cron: '0 8 * * *'
+
+  # Permitir ejecución manual desde GitHub Actions tab
+  workflow_dispatch:
+
+# Permisos necesarios para hacer commit
+permissions:
+  contents: write
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update content from APIs
+        env:
+          # YouTube API (opcional - configura en GitHub Secrets)
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+
+          # Spotify API (opcional - configura en GitHub Secrets)
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: npm run update:content
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code src/data/content.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/data/content.json
+          git commit -m "chore: auto-update latest content
+
+          Updated at $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+
+          🤖 Automated update via GitHub Actions
+
+          Co-Authored-By: Armando Picón <tech.a.picon@gmail.com>"
+          git push
+
+      - name: Summary
+        run: |
+          echo "## Content Update Summary 📊" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.git-check.outputs.changed }}" == "true" ]; then
+            echo "✅ Content was updated and committed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No changes detected - content is up to date" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Sources Checked:" >> $GITHUB_STEP_SUMMARY
+          echo "- 📺 YouTube" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎙️ Spotify Podcast" >> $GITHUB_STEP_SUMMARY
+          echo "- 📝 Dev.to" >> $GITHUB_STEP_SUMMARY
+          echo "- 📰 Medium" >> $GITHUB_STEP_SUMMARY

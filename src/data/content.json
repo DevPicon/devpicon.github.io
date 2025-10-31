@@ -1,25 +1,26 @@
 {
   "latestContent": {
     "video": {
-      "title": "Introducción a Jetpack Compose",
-      "description": "Aprende los fundamentos de Jetpack Compose y cómo crear interfaces de usuario modernas en Android.",
+      "title": "Video más reciente (actualizar manualmente)",
+      "description": "Descripción del video",
       "url": "https://youtube.com/@devpicon",
-      "date": "2024-10-29",
+      "date": "2025-10-31",
       "image": ""
     },
     "podcast": {
-      "title": "El Futuro del Desarrollo Móvil",
-      "description": "Discutimos las tendencias emergentes en el desarrollo móvil y qué esperar en los próximos años.",
-      "url": "https://open.spotify.com/show/tu-podcast-id",
-      "date": "2024-10-24",
+      "title": "Episodio más reciente (actualizar manualmente)",
+      "description": "Descripción del episodio",
+      "url": "https://open.spotify.com/show/1iyrRtXu0hrOQJyA7vdGiX",
+      "date": "2025-10-31",
       "image": ""
     },
     "blog": {
-      "title": "Clean Architecture en Android",
-      "description": "Una guía completa sobre cómo implementar Clean Architecture en tus proyectos Android.",
-      "url": "https://dev.to/devpicon",
-      "date": "2024-10-28",
-      "image": ""
+      "title": "Delegation Pattern in Kotlin",
+      "description": "",
+      "url": "https://devpicon.medium.com/delegation-pattern-in-kotlin-c08b976995ca?source=rss-5c60da6ae31c------2",
+      "date": "2025-01-27",
+      "image": "https://cdn-images-1.medium.com/max/1024/0*Uq-4GOFzTw6NT6kw"
     }
-  }
+  },
+  "lastUpdated": "2025-10-31T18:05:08.636Z"
 }
