@@ -1,11 +1,11 @@
 {
   "latestContent": {
     "video": {
-      "title": "Video más reciente (actualizar manualmente)",
-      "description": "Descripción del video",
-      "url": "https://youtube.com/@devpicon",
-      "date": "2025-10-31",
-      "image": ""
+      "title": "GDG Open Talks #2",
+      "description": "GDG Open Talks #2",
+      "url": "https://www.youtube.com/watch?v=-QrkX7NvDgg",
+      "date": "2025-08-27",
+      "image": "https://i.ytimg.com/vi/-QrkX7NvDgg/hqdefault.jpg"
     },
     "podcast": {
       "title": "Episodio más reciente (actualizar manualmente)",
@@ -22,5 +22,5 @@
       "image": "https://cdn-images-1.medium.com/max/1024/0*Uq-4GOFzTw6NT6kw"
     }
   },
-  "lastUpdated": "2025-10-31T18:05:08.636Z"
+  "lastUpdated": "2025-10-31T18:54:29.862Z"
 }
