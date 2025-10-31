@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio website for Armando Picón (devpicon) currently undergoing a complete redesign from Jekyll to Next.js. The project is in the `feature/redesign-2025` branch and aims to create a modern, minimalist, and professional digital presence showcasing Android development expertise, content creation (YouTube, podcasts, blog), and social media presence.
+This is a personal portfolio website for Armando Picón (devpicon) built with Next.js 14, TypeScript, and Tailwind CSS. The project showcases Android development expertise, content creation (YouTube, podcasts, blog), and social media presence.
 
-**Current State**: The repository is in transition. Most legacy Jekyll files have been deleted, and the Next.js foundation has been established with `package.json` configured.
+**Current State**: The complete redesign from Jekyll to Next.js is COMPLETE and deployed. The site is live at https://devpicon.github.io (picon.dev) with automated content fetching from YouTube, Dev.to, and Medium via GitHub Actions.
 
 ## Development Commands
 
@@ -35,7 +35,9 @@ npm run lint
 - **Animations**:
   - Framer Motion (for typing animation effects)
   - Lucide React (iconography)
-- **Internationalization**: next-intl (Spanish and English support required)
+- **Theme Management**: next-themes (dark/light mode toggle)
+- **Internationalization**: next-intl (Spanish and English support - in progress)
+- **Content Automation**: GitHub Actions with YouTube Data API v3, Dev.to API, Medium RSS
 
 ## Architecture & Design Guidelines
 
@@ -76,13 +78,27 @@ Expected component organization under `/components` or `/src/components`:
 - Use `clamp()` for dynamic text scaling
 - Optimize images, use web fonts efficiently
 
-## Deployment
+## Deployment & Automation
 
 - **Host**: GitHub Pages
 - **Repository**: `devpicon.github.io`
 - **Domain**: `picon.dev` (configured via CNAME)
-- **CI/CD**: GitHub Actions workflow for automatic deployment on push to `main`
-- **Branch Strategy**: Work on `feature/redesign-2025`, merge to `main` for deployment
+- **CI/CD**: Two GitHub Actions workflows:
+  1. **Deploy workflow** (`.github/workflows/deploy.yml`): Builds and deploys to GitHub Pages on push to `master`
+  2. **Update Content workflow** (`.github/workflows/update-content.yml`): Fetches latest content from YouTube, Dev.to, and Medium
+     - Trigger: Manual only (workflow_dispatch)
+     - Security: Uses GitHub Secrets for API keys (YOUTUBE_API_KEY)
+     - Process: Creates a PR for review instead of direct push to master
+- **Branch Strategy**: Work on feature branches, merge to `master` for deployment
+- **Live Site**: https://devpicon.github.io
+
+## GitHub Secrets Configuration
+
+The following secrets must be configured in repository settings:
+- `YOUTUBE_API_KEY`: YouTube Data API v3 key for fetching channel videos
+- Configure via: Repository Settings > Secrets and variables > Actions > New repository secret
+
+See `GITHUB_SECRETS_SETUP.md` and `YOUTUBE_QUICKSTART.md` for detailed setup instructions.
 
 ## Accessibility
 
@@ -93,12 +109,17 @@ Expected component organization under `/components` or `/src/components`:
 
 ## Important Files & Assets
 
-- Logo assets (in `tmp_init/images/`):
-  - `devpicon-logo-blanco.png` (dark mode)
-  - `devpicon-logo-negro.png` (light mode)
-  - `avatar_con_fondoblanco.png` (requires background removal for transparency)
-- Design specifications in `tmp_init/development/lineamientos_tech_stack.md`
-- Detailed task breakdown in `tmp_init/development/tareas_detalladas.md`
+- Logo assets in `public/`:
+  - `devpicon-logo-blanco.webp` (optimized, light version for dark backgrounds)
+  - `devpicon-logo-negro.webp` (optimized, dark version for light backgrounds)
+  - `avatar.webp` (optimized profile avatar)
+- All images have been optimized using Sharp (96% size reduction):
+  - Original: 10.5 MB
+  - Optimized: 459 KB
+  - Format: WebP with 80% quality
+- Content data stored in `public/latest-content.json` (auto-updated by GitHub Actions)
+- Helper script: `scripts/optimize-images.js` for batch image optimization
+- See `IMAGE_OPTIMIZATION.md` for details on optimization process
 
 ## Navigation Links
 
@@ -118,3 +139,51 @@ Include icons for: GitHub, LinkedIn, Instagram, Twitter (X), YouTube
 - **Consistent visual identity**: Maintain cohesive branding throughout
 - **Component reusability**: Build modular, DRY components
 - **Responsive-first**: Mobile-first approach with fluid adaptability
+
+## Recent Updates (2025-10-31)
+
+### Complete Redesign from Jekyll to Next.js
+- Migrated entire site from Jekyll static site generator to Next.js 14 with TypeScript
+- Implemented modern component architecture with Tailwind CSS
+- Added dark/light theme toggle with smooth transitions
+- Created responsive navigation with mobile hamburger menu
+
+### Image Optimization
+- Batch optimized all images using Sharp library
+- Converted PNG images to WebP format
+- Reduced total image size by 96% (10.5 MB to 459 KB)
+- Improved page load performance significantly
+
+### Automated Content Fetching System
+- Implemented GitHub Actions workflow to fetch latest content from:
+  - YouTube Data API v3 (personal channel videos)
+  - Dev.to API (latest blog posts)
+  - Medium RSS feed (latest articles)
+- Configured secure API key management via GitHub Secrets
+- Changed workflow to create PRs instead of direct push for better security
+- Set to manual trigger only (removed daily schedule)
+
+### YouTube API Configuration
+- Fixed YouTube Channel ID to fetch from correct personal channel
+- Channel ID: UCX9NJ471o7Wie1DQe94RVIg
+- Successfully tested and verified video fetching
+- Created comprehensive setup documentation (YOUTUBE_QUICKSTART.md)
+
+### Deployment & CI/CD
+- Configured GitHub Pages deployment via GitHub Actions
+- Automated build and deploy on push to master branch
+- Site successfully deployed and live at https://devpicon.github.io
+- Custom domain picon.dev configured
+
+### Documentation Created
+- `API_SETUP.md`: Comprehensive API configuration guide
+- `GITHUB_SECRETS_SETUP.md`: GitHub Secrets setup instructions
+- `YOUTUBE_QUICKSTART.md`: Quick YouTube API setup guide with helper script
+- `IMAGE_OPTIMIZATION.md`: Image optimization process documentation
+- `CONTENT_GUIDE.md`: Content fetching and management guide
+
+### Key Technical Decisions
+- Manual workflow trigger: Changed from daily automated runs to manual dispatch for better control
+- PR-based updates: Content updates now create PRs for review before merging
+- WebP format: Standardized on WebP for all images for optimal performance
+- Master branch deployment: Simplified from feature branch workflow to direct master deployment
