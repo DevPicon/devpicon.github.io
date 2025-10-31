@@ -8,11 +8,11 @@
       "image": "https://i.ytimg.com/vi/GAnQqrHuraQ/hqdefault.jpg"
     },
     "podcast": {
-      "title": "Episodio más reciente (actualizar manualmente)",
-      "description": "Descripción del episodio",
-      "url": "https://open.spotify.com/show/1iyrRtXu0hrOQJyA7vdGiX",
-      "date": "2025-10-31",
-      "image": ""
+      "title": "Del meme al mérito: ¿Cómo crear reputación desde el código? - Joel Humberto Gomez | S04E07",
+      "description": "En este último episodio con invitado de la Temporada 4 de Codalot Podcast, converso con Joel Humberto Gómez —Frontend Developer en Platzi, FullStack JS Developer y Google Developer Expert en Web Techn",
+      "url": "https://open.spotify.com/episode/2qiUPNjefb9zsWAGuOtQ1i",
+      "date": "2025-10-16",
+      "image": "https://i.scdn.co/image/ab6765630000ba8a9e21665f1a35c4c175def9f5"
     },
     "blog": {
       "title": "Delegation Pattern in Kotlin",
@@ -22,5 +22,5 @@
       "image": "https://cdn-images-1.medium.com/max/1024/0*Uq-4GOFzTw6NT6kw"
     }
   },
-  "lastUpdated": "2025-10-31T19:01:58.849Z"
+  "lastUpdated": "2025-10-31T21:34:04.064Z"
 }
