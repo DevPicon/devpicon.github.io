@@ -6,14 +6,17 @@ Context file for Google Gemini when working with this repository.
 
 Personal portfolio website for Armando Picón (devpicon) - Mobile Developer, Android Engineer, and Content Creator. Built with Next.js 14, TypeScript, and Tailwind CSS. Successfully redesigned from Jekyll to modern Next.js architecture.
 
-## Current Status (2025-10-31)
+## Current Status (2025-11-01)
 
 The project is **COMPLETE and DEPLOYED**:
-- Live at: **https://picon.dev** (custom domain configured)
+- Live at: **https://picon.dev** (custom domain configured and verified)
 - All features implemented and working
 - Automated content fetching configured
 - GitHub Actions CI/CD fully operational
 - Bilingual support (Spanish/English) active
+- Google Analytics 4 integrated with GDPR compliance
+- Cookie consent banner implemented
+- Privacy Policy page complete
 
 ## Technology Stack
 
@@ -232,9 +235,48 @@ basePath: ''              // Custom domain configured
 - **Custom Domain**: picon.dev (via CNAME)
 - **SSL**: Enforced by GitHub Pages
 
-## Latest Update (2025-10-31)
+## Latest Update (2025-11-01)
 
-### Internationalization Complete
+### Custom Domain Configuration - COMPLETE
+- Custom domain **picon.dev** fully configured
+- Namecheap DNS records set up:
+  - A records to GitHub Pages IPs (185.199.108.153, etc.)
+  - CNAME for www subdomain
+- CNAME file in repository root
+- SSL certificate active and verified
+- Site accessible at https://picon.dev and https://www.picon.dev
+
+### Google Analytics 4 Implementation - COMPLETE
+- GA4 tracking code integrated (G-WRZ0G12DGD)
+- Created GoogleAnalytics component with gtag.js
+- GDPR-compliant consent mode v2 implemented:
+  - All storage types denied by default
+  - Consent updates after user acceptance
+- Page view tracking configured
+- Custom event tracking for newsletter signup
+- Properly integrated with cookie consent system
+
+### GDPR Cookie Consent - COMPLETE
+- CookieConsent component with bilingual support
+- Bottom banner, non-intrusive design
+- Accept/Reject buttons with clear actions
+- Preference stored in localStorage (365 days)
+- Integrated with Google Analytics consent mode
+- Fully translated in Spanish and English
+- GDPR compliant for EU visitors
+
+### Privacy Policy Page - COMPLETE
+- Comprehensive Privacy Policy at `/[locale]/privacy-policy`
+- Bilingual content (Spanish/English)
+- Covers: data collection, cookies, analytics, user rights
+- Contact information for privacy requests
+- Added to Footer navigation
+- Fully responsive design
+- GDPR compliant with clear explanations
+
+### Previous Update (2025-10-31)
+
+#### Internationalization Complete
 - Full Spanish/English support with next-intl
 - Browser language auto-detection
 - Language switcher in navbar (ES/EN flags)
@@ -243,14 +285,14 @@ basePath: ''              // Custom domain configured
 - SEO metadata translated
 - All pages and components fully translated
 
-### Mailchimp Newsletter Integration
+#### Mailchimp Newsletter Integration
 - Email subscription form on Contact page
 - Simplified to email-only (removed name/phone)
 - Working form submission to Mailchimp
 - Translated success/error messages
 - Embedded form styling
 
-### Navigation Improvements
+#### Navigation Improvements
 - Fixed links to include locale prefix
 - Special note in English about Spanish content
 - Improved mobile menu translations
@@ -294,6 +336,9 @@ For detailed information on specific topics, refer to:
 
 ---
 
-Last Updated: 2025-10-31 (Evening Session)
-Status: Production - Fully Deployed with i18n
-Latest Commit: 056db57 (i18n implementation complete)
+Last Updated: 2025-11-01
+Status: Production - Fully Deployed with Custom Domain, Analytics, and GDPR Compliance
+Latest Commits:
+- 8625839 (docs: custom domain documentation)
+- 3c3281e (feat: Google Analytics 4 with GDPR consent)
+- d7625a9 (feat: Privacy Policy with GDPR compliance)

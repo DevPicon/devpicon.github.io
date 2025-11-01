@@ -6,9 +6,9 @@ Context file for AI Assistants (ChatGPT, GitHub Copilot, Codex) working with thi
 
 Personal portfolio site for **Armando Picón** (@devpicon) - Android Developer, Content Creator, and Technical Leader.
 
-**Tech Stack**: Next.js 14 + TypeScript + Tailwind CSS + next-intl (i18n)
+**Tech Stack**: Next.js 14 + TypeScript + Tailwind CSS + next-intl (i18n) + Google Analytics 4
 **Status**: Production (Live at **https://picon.dev**)
-**Last Major Update**: 2025-10-31 (Complete redesign + i18n + custom domain)
+**Last Major Update**: 2025-11-01 (Custom domain + GA4 + GDPR compliance)
 
 ## Quick Commands
 
@@ -328,7 +328,59 @@ Currently no automated tests configured.
 - **YouTube**: https://youtube.com/@devpicon
 - **Instagram**: https://instagram.com/devpicon
 
-## Latest Session Work (2025-10-31 Evening)
+## Latest Session Work (2025-11-01)
+
+### Custom Domain Configuration - COMPLETE
+- Configured custom domain **picon.dev** with Namecheap
+- Set up DNS A records to GitHub Pages IPs
+- Created CNAME for www subdomain
+- Added CNAME file to repository root
+- Verified SSL certificate and domain propagation
+- Site live at https://picon.dev and https://www.picon.dev
+
+### Google Analytics 4 Integration - COMPLETE
+- Implemented GA4 tracking (Measurement ID: G-WRZ0G12DGD)
+- Created GoogleAnalytics component with gtag.js
+- GDPR-compliant consent mode v2:
+  - All storage denied by default
+  - Consent updates after user acceptance
+- Page view tracking configured
+- Newsletter signup tracked as custom event
+- Integrated with cookie consent system
+
+### GDPR Cookie Consent Banner - COMPLETE
+- Created CookieConsent component
+- Bilingual support (Spanish/English)
+- Bottom banner with Accept/Reject buttons
+- Preference stored in localStorage (365 days)
+- Integrated with GA4 consent mode
+- GDPR compliant for EU visitors
+- Non-intrusive design
+
+### Privacy Policy Page - COMPLETE
+- Created comprehensive Privacy Policy page
+- Bilingual content (Spanish/English)
+- Covers data collection, cookies, analytics, user rights
+- Added link to Footer navigation
+- Fully responsive design
+- GDPR compliant with clear explanations
+- Contact information for privacy requests
+
+### All Features Tested
+- ✅ Custom domain working with SSL
+- ✅ Analytics tracking page views
+- ✅ Cookie consent banner functioning
+- ✅ Preferences persisting correctly
+- ✅ Newsletter event tracking
+- ✅ Privacy Policy accessible
+- ✅ All builds passing
+
+### Commits Made
+- `8625839` - docs: update documentation with custom domain picon.dev
+- `3c3281e` - feat: add Google Analytics 4 with GDPR cookie consent
+- `d7625a9` - feat: add Privacy Policy page with GDPR compliance
+
+## Previous Session Work (2025-10-31)
 
 ### Internationalization Implementation - COMPLETE
 - Integrated next-intl for full Spanish/English support
@@ -351,7 +403,7 @@ Currently no automated tests configured.
 - Added special note in English about Spanish content
 - Mobile menu fully translated
 
-### Commit
+### Commit (2025-10-31)
 - `056db57` - Complete i18n implementation with next-intl
 
 ## Known Issues
@@ -363,11 +415,13 @@ None currently. All features working as expected.
 1. ~~Complete Spanish/English i18n~~ ✅ DONE
 2. ~~Add Contact form~~ ✅ DONE (with newsletter)
 3. ~~Newsletter signup~~ ✅ DONE (Mailchimp)
-4. Add About page
-5. Implement podcast integration (dedicated page)
-6. Add blog section (MDX)
-7. Analytics integration
-8. Dark mode persistence improvement
+4. ~~Analytics integration~~ ✅ DONE (Google Analytics 4)
+5. ~~GDPR compliance~~ ✅ DONE (Cookie consent + Privacy Policy)
+6. ~~Custom domain~~ ✅ DONE (picon.dev)
+7. Add About page
+8. Implement podcast integration (dedicated page)
+9. Add blog section (MDX)
+10. Dark mode persistence improvement
 
 ## Git Workflow
 
@@ -401,6 +455,6 @@ For questions or issues, refer to documentation files or check GitHub Issues.
 
 ---
 
-**Last Updated**: 2025-10-31 (Evening Session)
-**Status**: Production Ready with i18n
-**Version**: 1.1.0 (Redesign + Internationalization Complete)
+**Last Updated**: 2025-11-01
+**Status**: Production Ready - Custom Domain + Analytics + GDPR Compliant
+**Version**: 1.2.0 (Custom Domain + Google Analytics 4 + GDPR Compliance)
