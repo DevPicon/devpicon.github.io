@@ -119,7 +119,8 @@
     "madeWith": "Made with",
     "and": "and",
     "love": "love",
-    "code": "code"
+    "code": "code",
+    "privacy": "Privacy Policy"
   },
   "home": {
     "hero": {
@@ -160,6 +161,10 @@
     "contact": {
       "title": "Contact - Armando Picón",
       "description": "Get in touch with me for projects, collaborations, or subscribe to my newsletter for tech content and updates."
+    },
+    "privacy": {
+      "title": "Privacy Policy - Armando Picón",
+      "description": "Information about how we collect, use, and protect your personal data"
     }
   },
   "cookieConsent": {
@@ -168,5 +173,93 @@
     "learnMore": "Learn more",
     "accept": "Accept",
     "reject": "Reject"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "date": "November 1, 2025",
+    "intro": {
+      "title": "Introduction",
+      "description": "This Privacy Policy describes how picon.dev ('we', 'our') collects, uses, and protects your personal information when you visit our website."
+    },
+    "collection": {
+      "title": "Information We Collect",
+      "analytics": {
+        "title": "Analytics Data",
+        "description": "We use Google Analytics to understand how visitors use our site. This information includes:",
+        "items": {
+          "pageViews": "Pages visited and time spent",
+          "location": "Approximate geographic location (country/city)",
+          "device": "Device type and operating system",
+          "browser": "Web browser used",
+          "referrer": "Referring website"
+        }
+      },
+      "newsletter": {
+        "title": "Newsletter Subscription",
+        "description": "If you choose to subscribe to our newsletter, we collect your email address through Mailchimp."
+      }
+    },
+    "usage": {
+      "title": "How We Use Your Information",
+      "items": {
+        "improve": "Improve and optimize our website",
+        "understand": "Understand user behavior and preferences",
+        "newsletter": "Send relevant content if you've subscribed to the newsletter",
+        "communicate": "Respond to your inquiries or comments"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "We use cookies to improve your experience on our site. Cookies are small text files stored on your device.",
+      "types": {
+        "title": "Types of cookies we use:",
+        "essential": {
+          "name": "Essential cookies",
+          "description": "Necessary for basic site functionality (language preferences, cookie consent)"
+        },
+        "analytics": {
+          "name": "Analytics cookies",
+          "description": "Google Analytics to understand site usage (only with your consent)"
+        }
+      },
+      "control": "You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed."
+    },
+    "thirdParty": {
+      "title": "Third-Party Services",
+      "ga": {
+        "description": "We use Google Analytics for web analytics. Google may use this data according to their own privacy policy.",
+        "link": "Google Privacy Policy"
+      },
+      "mailchimp": {
+        "description": "We use Mailchimp to manage our newsletter. Your email address is stored on their servers.",
+        "link": "Mailchimp Privacy Policy"
+      }
+    },
+    "rights": {
+      "title": "Your Rights (GDPR)",
+      "description": "If you are a resident of the European Union, you have the following rights:",
+      "items": {
+        "access": "Right of access to your personal data",
+        "rectification": "Right to rectification of inaccurate data",
+        "erasure": "Right to erasure ('right to be forgotten')",
+        "restriction": "Right to restriction of processing",
+        "portability": "Right to data portability",
+        "objection": "Right to object to processing"
+      }
+    },
+    "security": {
+      "title": "Data Security",
+      "description": "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "description": "We may update this Privacy Policy occasionally. We will notify you of significant changes by posting the new policy on this page and updating the 'Last updated' date."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "If you have questions about this Privacy Policy or wish to exercise your rights, please contact us:",
+      "email": "Email"
+    }
   }
 }

@@ -1,10 +1,12 @@
 'use client';
 
 import { Github, Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
   const socialLinks = [
     {
       name: 'GitHub',
@@ -72,6 +74,14 @@ export default function Footer() {
             <span className="text-accent-blue" aria-label={t('code')}>
               {t('code')}
             </span>
+          </p>
+          <p className="mt-3">
+            <Link
+              href={`/${locale}/privacy`}
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              {t('privacy')}
+            </Link>
           </p>
         </div>
       </div>

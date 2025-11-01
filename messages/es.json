@@ -119,7 +119,8 @@
     "madeWith": "Hecho con",
     "and": "y",
     "love": "amor",
-    "code": "código"
+    "code": "código",
+    "privacy": "Política de Privacidad"
   },
   "home": {
     "hero": {
@@ -159,6 +160,10 @@
     "contact": {
       "title": "Contacto - Armando Picón",
       "description": "Contacta conmigo para proyectos, colaboraciones, o suscríbete a mi newsletter para contenido tech y actualizaciones."
+    },
+    "privacy": {
+      "title": "Política de Privacidad - Armando Picón",
+      "description": "Información sobre cómo recopilamos, usamos y protegemos tus datos personales"
     }
   },
   "cookieConsent": {
@@ -167,5 +172,93 @@
     "learnMore": "Más información",
     "accept": "Aceptar",
     "reject": "Rechazar"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización",
+    "date": "1 de noviembre de 2025",
+    "intro": {
+      "title": "Introducción",
+      "description": "Esta Política de Privacidad describe cómo picon.dev ('nosotros', 'nuestro') recopila, utiliza y protege tu información personal cuando visitas nuestro sitio web."
+    },
+    "collection": {
+      "title": "Información que Recopilamos",
+      "analytics": {
+        "title": "Datos de Análisis",
+        "description": "Utilizamos Google Analytics para entender cómo los visitantes utilizan nuestro sitio. Esta información incluye:",
+        "items": {
+          "pageViews": "Páginas visitadas y tiempo de permanencia",
+          "location": "Ubicación geográfica aproximada (país/ciudad)",
+          "device": "Tipo de dispositivo y sistema operativo",
+          "browser": "Navegador web utilizado",
+          "referrer": "Sitio web de referencia"
+        }
+      },
+      "newsletter": {
+        "title": "Suscripción al Newsletter",
+        "description": "Si decides suscribirte a nuestro newsletter, recopilamos tu dirección de correo electrónico a través de Mailchimp."
+      }
+    },
+    "usage": {
+      "title": "Cómo Usamos Tu Información",
+      "items": {
+        "improve": "Mejorar y optimizar nuestro sitio web",
+        "understand": "Entender el comportamiento y las preferencias de los usuarios",
+        "newsletter": "Enviar contenido relevante si te has suscrito al newsletter",
+        "communicate": "Responder a tus consultas o comentarios"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Utilizamos cookies para mejorar tu experiencia en nuestro sitio. Las cookies son pequeños archivos de texto almacenados en tu dispositivo.",
+      "types": {
+        "title": "Tipos de cookies que utilizamos:",
+        "essential": {
+          "name": "Cookies esenciales",
+          "description": "Necesarias para el funcionamiento básico del sitio (preferencias de idioma, consentimiento de cookies)"
+        },
+        "analytics": {
+          "name": "Cookies de análisis",
+          "description": "Google Analytics para entender el uso del sitio (solo con tu consentimiento)"
+        }
+      },
+      "control": "Puedes controlar y/o eliminar las cookies según desees. Puedes eliminar todas las cookies que ya están en tu computadora y configurar la mayoría de los navegadores para evitar que se almacenen."
+    },
+    "thirdParty": {
+      "title": "Servicios de Terceros",
+      "ga": {
+        "description": "Utilizamos Google Analytics para análisis web. Google puede usar estos datos según su propia política de privacidad.",
+        "link": "Política de Privacidad de Google"
+      },
+      "mailchimp": {
+        "description": "Utilizamos Mailchimp para gestionar nuestro newsletter. Tu dirección de correo se almacena en sus servidores.",
+        "link": "Política de Privacidad de Mailchimp"
+      }
+    },
+    "rights": {
+      "title": "Tus Derechos (GDPR)",
+      "description": "Si eres residente de la Unión Europea, tienes los siguientes derechos:",
+      "items": {
+        "access": "Derecho de acceso a tus datos personales",
+        "rectification": "Derecho de rectificación de datos inexactos",
+        "erasure": "Derecho de supresión ('derecho al olvido')",
+        "restriction": "Derecho de limitación del tratamiento",
+        "portability": "Derecho a la portabilidad de los datos",
+        "objection": "Derecho de oposición al tratamiento"
+      }
+    },
+    "security": {
+      "title": "Seguridad de Datos",
+      "description": "Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción."
+    },
+    "changes": {
+      "title": "Cambios a esta Política",
+      "description": "Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos sobre cambios significativos publicando la nueva política en esta página y actualizando la fecha de 'Última actualización'."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Si tienes preguntas sobre esta Política de Privacidad o deseas ejercer tus derechos, por favor contáctanos:",
+      "email": "Email"
+    }
   }
 }
