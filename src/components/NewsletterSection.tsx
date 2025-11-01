@@ -4,6 +4,13 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export default function NewsletterSection() {
   const [mounted, setMounted] = useState(false);
   const t = useTranslations('contact.newsletter');
@@ -11,6 +18,17 @@ export default function NewsletterSection() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleSubmit = () => {
+    // Track newsletter subscription in Google Analytics
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'newsletter_subscription', {
+        event_category: 'engagement',
+        event_label: 'Newsletter Form',
+        value: 1
+      });
+    }
+  };
 
   if (!mounted) {
     return (
@@ -95,6 +113,7 @@ export default function NewsletterSection() {
                   name="mc-embedded-subscribe-form"
                   className="validate"
                   target="_blank"
+                  onSubmit={handleSubmit}
                 >
                   <div id="mc_embed_signup_scroll" className="space-y-4">
                     <div className="mc-field-group">

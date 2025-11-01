@@ -161,5 +161,12 @@
       "title": "Contact - Armando Picón",
       "description": "Get in touch with me for projects, collaborations, or subscribe to my newsletter for tech content and updates."
     }
+  },
+  "cookieConsent": {
+    "title": "🍪 Cookie Usage",
+    "description": "We use cookies to analyze site traffic and improve your experience. Your data is processed anonymously.",
+    "learnMore": "Learn more",
+    "accept": "Accept",
+    "reject": "Reject"
   }
 }

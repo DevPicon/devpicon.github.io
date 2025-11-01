@@ -160,5 +160,12 @@
       "title": "Contacto - Armando Picón",
       "description": "Contacta conmigo para proyectos, colaboraciones, o suscríbete a mi newsletter para contenido tech y actualizaciones."
     }
+  },
+  "cookieConsent": {
+    "title": "🍪 Uso de Cookies",
+    "description": "Utilizamos cookies para analizar el tráfico del sitio y mejorar tu experiencia. Tus datos son tratados de forma anónima.",
+    "learnMore": "Más información",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
   }
 }
