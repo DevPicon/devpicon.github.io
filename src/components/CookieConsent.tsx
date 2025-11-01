@@ -3,6 +3,14 @@
 import { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+  }
+}
+
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
   const locale = useLocale();
@@ -20,11 +28,24 @@ export default function CookieConsent() {
     localStorage.setItem('cookie-consent', 'accepted');
     setShowBanner(false);
 
-    // Enable Google Analytics
-    if (typeof window !== 'undefined' && window.gtag) {
+    // Enable Google Analytics with proper consent update
+    if (typeof window !== 'undefined') {
+      // Initialize dataLayer if not exists
+      window.dataLayer = window.dataLayer || [];
+
+      // Define gtag function if not exists
+      if (!window.gtag) {
+        window.gtag = function() {
+          window.dataLayer!.push(arguments);
+        };
+      }
+
+      // Update consent
       window.gtag('consent', 'update', {
-        analytics_storage: 'granted'
+        'analytics_storage': 'granted'
       });
+
+      console.log('Consent updated to granted');
     }
   };
 
@@ -32,11 +53,24 @@ export default function CookieConsent() {
     localStorage.setItem('cookie-consent', 'rejected');
     setShowBanner(false);
 
-    // Disable Google Analytics
-    if (typeof window !== 'undefined' && window.gtag) {
+    // Keep Analytics disabled
+    if (typeof window !== 'undefined') {
+      // Initialize dataLayer if not exists
+      window.dataLayer = window.dataLayer || [];
+
+      // Define gtag function if not exists
+      if (!window.gtag) {
+        window.gtag = function() {
+          window.dataLayer!.push(arguments);
+        };
+      }
+
+      // Explicitly deny consent
       window.gtag('consent', 'update', {
-        analytics_storage: 'denied'
+        'analytics_storage': 'denied'
       });
+
+      console.log('Consent updated to denied');
     }
   };
 
