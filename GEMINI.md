@@ -9,10 +9,11 @@ Personal portfolio website for Armando Picón (devpicon) - Mobile Developer, And
 ## Current Status (2025-10-31)
 
 The project is **COMPLETE and DEPLOYED**:
-- Live at: https://devpicon.github.io (picon.dev)
+- Live at: **https://picon.dev** (custom domain configured)
 - All features implemented and working
 - Automated content fetching configured
 - GitHub Actions CI/CD fully operational
+- Bilingual support (Spanish/English) active
 
 ## Technology Stack
 

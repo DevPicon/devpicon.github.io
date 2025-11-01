@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a personal portfolio website for Armando Picón (devpicon) built with Next.js 14, TypeScript, and Tailwind CSS. The project showcases Android development expertise, content creation (YouTube, podcasts, blog), and social media presence.
 
-**Current State**: The complete redesign from Jekyll to Next.js is COMPLETE and deployed. The site is live at https://devpicon.github.io (picon.dev) with automated content fetching from YouTube, Dev.to, and Medium via GitHub Actions.
+**Current State**: The complete redesign from Jekyll to Next.js is COMPLETE and deployed. The site is live at **https://picon.dev** (custom domain configured) with automated content fetching from YouTube, Dev.to, and Medium via GitHub Actions.
 
 ## Development Commands
 

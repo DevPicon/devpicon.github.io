@@ -7,8 +7,8 @@ Context file for AI Assistants (ChatGPT, GitHub Copilot, Codex) working with thi
 Personal portfolio site for **Armando Picón** (@devpicon) - Android Developer, Content Creator, and Technical Leader.
 
 **Tech Stack**: Next.js 14 + TypeScript + Tailwind CSS + next-intl (i18n)
-**Status**: Production (Live at https://devpicon.github.io)
-**Last Major Update**: 2025-10-31 (Complete redesign + i18n implementation)
+**Status**: Production (Live at **https://picon.dev**)
+**Last Major Update**: 2025-10-31 (Complete redesign + i18n + custom domain)
 
 ## Quick Commands
 
