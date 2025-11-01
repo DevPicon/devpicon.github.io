@@ -9,10 +9,8 @@ export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const navLinks = [
-    { label: 'Acerca de', href: '#about' },
-    { label: 'Podcast', href: '#podcast' },
-    { label: 'Mis Redes', href: '#social' },
-    { label: 'Contacto', href: '#contact' },
+    { label: 'Inicio', href: '/' },
+    { label: 'Contacto', href: '/contact' },
   ];
 
   useEffect(() => {
