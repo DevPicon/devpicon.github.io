@@ -67,10 +67,19 @@ Expected component organization under `/components` or `/src/components`:
    - Latest blog post (Dev.to API: `https://dev.to/api/articles?username=devpicon`)
 3. **Responsive Design**: Desktop (3-column grid) → Tablet (2-column) → Mobile (1-column)
 
-### i18n Implementation
-- Store translations in `/locales/es/common.json` and `/locales/en/common.json`
-- Auto-detect language from `navigator.language`
-- All static text must be translatable
+### i18n Implementation (COMPLETE - 2025-10-31)
+- **Framework**: next-intl (fully integrated)
+- **Languages**: Spanish (default), English
+- **Translation Files**:
+  - `/messages/es.json` - Complete Spanish translations
+  - `/messages/en.json` - Complete English translations
+- **Features**:
+  - Browser language auto-detection
+  - Language switcher in Navbar with flag icons
+  - Locale-aware routing (`/es/*`, `/en/*`)
+  - SEO metadata translated for both languages
+  - All static text fully translatable
+  - Special note in English version about Spanish content availability
 
 ### Performance Requirements
 - Lighthouse score > 90
@@ -196,8 +205,37 @@ Include icons for: GitHub, LinkedIn, Instagram, Twitter (X), YouTube
 - `IMAGE_OPTIMIZATION.md`: Image optimization process documentation
 - `CONTENT_GUIDE.md`: Content fetching and management guide
 
+### Latest Session Work (2025-10-31)
+
+#### Full Internationalization Implementation
+- Integrated next-intl for complete Spanish/English support
+- Created comprehensive translation files:
+  - `/messages/es.json` - 150+ translation keys
+  - `/messages/en.json` - 150+ translation keys
+- Implemented language switcher with flag icons (ES/EN)
+- Added browser language detection on first visit
+- Configured locale-aware routing with middleware
+- Translated all components:
+  - Home page (hero, sections, content cards)
+  - Contact page (form, validation messages)
+  - Navigation (navbar links, footer)
+  - SEO metadata (titles, descriptions)
+- Integrated Mailchimp newsletter subscription:
+  - Simplified form (email only, removed name/phone)
+  - Working form submission with correct URL
+  - Translated success/error messages
+  - Embedded form with proper styling
+- Fixed navigation links to include locale prefix
+- Added special note in English version about Spanish content
+
+#### Commits Made This Session
+- `056db57` - Complete internationalization implementation with next-intl
+
 ### Key Technical Decisions
 - Manual workflow trigger: Changed from daily automated runs to manual dispatch for better control
 - PR-based updates: Content updates now create PRs for review before merging
 - WebP format: Standardized on WebP for all images for optimal performance
 - Master branch deployment: Simplified from feature branch workflow to direct master deployment
+- next-intl for i18n: Chosen for its App Router compatibility and middleware-based routing
+- Spanish as default: Primary audience is Spanish-speaking, English as secondary
+- Mailchimp for newsletter: Established platform with good API and reliability

@@ -22,7 +22,8 @@ Language:      TypeScript
 Styling:       Tailwind CSS
 Theme:         next-themes (dark/light mode)
 Animations:    Framer Motion, Lucide React
-i18n:          next-intl (ES/EN - in progress)
+i18n:          next-intl (ES/EN - COMPLETE)
+Newsletter:    Mailchimp integration
 Deployment:    GitHub Pages
 Automation:    GitHub Actions
 ```
@@ -230,15 +231,38 @@ basePath: ''              // Custom domain configured
 - **Custom Domain**: picon.dev (via CNAME)
 - **SSL**: Enforced by GitHub Pages
 
+## Latest Update (2025-10-31)
+
+### Internationalization Complete
+- Full Spanish/English support with next-intl
+- Browser language auto-detection
+- Language switcher in navbar (ES/EN flags)
+- Translation files: `/messages/es.json`, `/messages/en.json`
+- Locale routing: `/es/*` and `/en/*`
+- SEO metadata translated
+- All pages and components fully translated
+
+### Mailchimp Newsletter Integration
+- Email subscription form on Contact page
+- Simplified to email-only (removed name/phone)
+- Working form submission to Mailchimp
+- Translated success/error messages
+- Embedded form styling
+
+### Navigation Improvements
+- Fixed links to include locale prefix
+- Special note in English about Spanish content
+- Improved mobile menu translations
+
 ## Next Steps / Future Enhancements
 
-1. Complete i18n implementation (Spanish/English)
-2. Add more sections (About, Contact, Portfolio)
-3. Implement podcast feed integration
-4. Add blog section with MDX support
-5. Enhance SEO with dynamic metadata
-6. Add analytics tracking
-7. Implement contact form
+1. ~~Complete i18n implementation (Spanish/English)~~ ✅ DONE
+2. ~~Implement contact form~~ ✅ DONE (with newsletter)
+3. Add more sections (About, Portfolio)
+4. Implement podcast feed integration (RSS/Spotify)
+5. Add blog section with MDX support
+6. Enhance SEO with dynamic metadata
+7. Add analytics tracking (Google Analytics or privacy-focused)
 
 ## Troubleshooting
 
@@ -269,5 +293,6 @@ For detailed information on specific topics, refer to:
 
 ---
 
-Last Updated: 2025-10-31
-Status: Production - Fully Deployed
+Last Updated: 2025-10-31 (Evening Session)
+Status: Production - Fully Deployed with i18n
+Latest Commit: 056db57 (i18n implementation complete)

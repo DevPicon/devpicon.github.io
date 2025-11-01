@@ -6,9 +6,9 @@ Context file for AI Assistants (ChatGPT, GitHub Copilot, Codex) working with thi
 
 Personal portfolio site for **Armando Picón** (@devpicon) - Android Developer, Content Creator, and Technical Leader.
 
-**Tech Stack**: Next.js 14 + TypeScript + Tailwind CSS
+**Tech Stack**: Next.js 14 + TypeScript + Tailwind CSS + next-intl (i18n)
 **Status**: Production (Live at https://devpicon.github.io)
-**Last Major Update**: 2025-10-31 (Complete redesign from Jekyll to Next.js)
+**Last Major Update**: 2025-10-31 (Complete redesign + i18n implementation)
 
 ## Quick Commands
 
@@ -328,19 +328,45 @@ Currently no automated tests configured.
 - **YouTube**: https://youtube.com/@devpicon
 - **Instagram**: https://instagram.com/devpicon
 
+## Latest Session Work (2025-10-31 Evening)
+
+### Internationalization Implementation - COMPLETE
+- Integrated next-intl for full Spanish/English support
+- Created translation files: `/messages/es.json`, `/messages/en.json`
+- Added language switcher with flag icons (ES/EN)
+- Browser language auto-detection
+- Locale routing: `/es/*` and `/en/*`
+- Translated all pages (Home, Contact)
+- SEO metadata in both languages
+
+### Mailchimp Newsletter Integration - COMPLETE
+- Email subscription form on Contact page
+- Simplified form (email only)
+- Working Mailchimp submission
+- Success/error messages translated
+- Proper form validation
+
+### Navigation Updates
+- Fixed links to include locale prefix
+- Added special note in English about Spanish content
+- Mobile menu fully translated
+
+### Commit
+- `056db57` - Complete i18n implementation with next-intl
+
 ## Known Issues
 
 None currently. All features working as expected.
 
 ## Future Enhancements
 
-1. Complete Spanish/English i18n
-2. Add About page
-3. Add Contact form
-4. Implement podcast integration
-5. Add blog section (MDX)
-6. Analytics integration
-7. Newsletter signup
+1. ~~Complete Spanish/English i18n~~ ✅ DONE
+2. ~~Add Contact form~~ ✅ DONE (with newsletter)
+3. ~~Newsletter signup~~ ✅ DONE (Mailchimp)
+4. Add About page
+5. Implement podcast integration (dedicated page)
+6. Add blog section (MDX)
+7. Analytics integration
 8. Dark mode persistence improvement
 
 ## Git Workflow
@@ -375,6 +401,6 @@ For questions or issues, refer to documentation files or check GitHub Issues.
 
 ---
 
-**Last Updated**: 2025-10-31
-**Status**: Production Ready
-**Version**: 1.0.0 (Redesign Complete)
+**Last Updated**: 2025-10-31 (Evening Session)
+**Status**: Production Ready with i18n
+**Version**: 1.1.0 (Redesign + Internationalization Complete)
