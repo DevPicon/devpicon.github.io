@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function SocialLinks() {
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations('contact.social');
 
   useEffect(() => {
     setMounted(true);
@@ -112,10 +114,10 @@ export default function SocialLinks() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-              Sígueme en redes
+              {t('title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Conecta conmigo en tus plataformas favoritas
+              {t('description')}
             </p>
           </motion.div>
 
@@ -160,7 +162,7 @@ export default function SocialLinks() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            ¿Prefieres el email? Escríbeme a{' '}
+            {t('footer')}{' '}
             <a href="mailto:hello.devpicon@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
               hello.devpicon@gmail.com
             </a>

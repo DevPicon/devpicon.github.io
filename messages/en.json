@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "home": "Home",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi! I'm",
+    "name": "Armando Picón",
+    "role": "Android Engineer · Tech Leader · Speaker",
+    "description": "Passionate about creating exceptional mobile experiences and sharing knowledge with the tech community.",
+    "cta": {
+      "contact": "Let's talk",
+      "projects": "View projects"
+    }
+  },
+  "latestContent": {
+    "title": "Latest content",
+    "youtube": {
+      "badge": "YouTube",
+      "watchNow": "Watch now"
+    },
+    "podcast": {
+      "badge": "Podcast",
+      "listenNow": "Listen now"
+    },
+    "articles": {
+      "badge": "Article",
+      "readMore": "Read more"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "description": "With over 8 years of experience in mobile development, I specialize in creating robust and scalable Android applications. I currently lead technical teams and share my knowledge through talks, podcasts, and social media content.",
+    "stats": {
+      "experience": "Years of experience",
+      "talks": "Talks given",
+      "projects": "Projects completed"
+    }
+  },
+  "skills": {
+    "title": "Tech stack",
+    "categories": {
+      "mobile": "Mobile Development",
+      "architecture": "Architecture",
+      "tools": "Tools"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let's Connect",
+      "description": "I'm always open to new opportunities, collaborations, and interesting conversations.",
+      "availableProjects": "Available for projects",
+      "openCollabs": "Open to collaborations"
+    },
+    "newsletter": {
+      "title": "Subscribe to my newsletter",
+      "description": "Receive exclusive content directly in your inbox",
+      "benefits": {
+        "podcast": "New Codalot Podcast episodes",
+        "articles": "Technical articles and tutorials",
+        "tips": "Android/Kotlin development tips",
+        "news": "Tech industry news"
+      },
+      "form": {
+        "email": "Email address",
+        "name": "Name",
+        "phone": "Phone",
+        "submit": "Subscribe",
+        "privacy": "We respect your privacy. You can unsubscribe at any time.",
+        "placeholder": {
+          "email": "your@email.com",
+          "name": "Your name",
+          "phone": "+1 999 999 999"
+        }
+      }
+    },
+    "professional": {
+      "title": "Projects and collaborations",
+      "description": "Do you have a project in mind? Want to collaborate on your podcast or event?",
+      "emailLabel": "Professional email",
+      "copyButton": "Copy",
+      "copied": "Copied!",
+      "specialties": {
+        "title": "Specialties",
+        "android": {
+          "title": "Android Development",
+          "description": "Kotlin / Java / Jetpack Compose"
+        },
+        "architecture": {
+          "title": "App Architecture",
+          "description": "MVVM / Clean Architecture / Modular"
+        },
+        "consulting": {
+          "title": "Technical Consulting",
+          "description": "Code reviews / Mentoring / Tech decisions"
+        },
+        "speaking": {
+          "title": "Talks and workshops",
+          "description": "Events / Podcasts / Conferences"
+        }
+      }
+    },
+    "social": {
+      "title": "Follow me on social media",
+      "description": "Connect with me on your favorite platforms",
+      "footer": "Prefer email? Write me at",
+      "platforms": {
+        "youtube": "@devpicon",
+        "spotify": "Codalot Podcast",
+        "github": "@DevPicon",
+        "linkedin": "/in/devpicon",
+        "devto": "@devpicon",
+        "medium": "@devpicon"
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "and": "and",
+    "love": "love",
+    "code": "code"
+  },
+  "home": {
+    "hero": {
+      "greeting": "Hi, I'm",
+      "name": "Armando",
+      "description": "Passionate about mobile technology and content creation. Sharing knowledge about Android development and technical leadership.",
+      "scrollLabel": "Scroll to content",
+      "roles": {
+        "mobileDev": "Mobile Developer",
+        "androidEng": "Android Engineer",
+        "techLead": "Technical Leader",
+        "speaker": "Speaker",
+        "designer": "Designer",
+        "contentCreator": "Content Creator"
+      }
+    },
+    "latestContent": {
+      "title": "Latest",
+      "titleHighlight": "Content",
+      "video": "Latest Video",
+      "podcast": "Latest Podcast",
+      "blog": "Latest Article",
+      "note": "Most of my content is in Spanish, though I occasionally write in English."
+    },
+    "dateFormats": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "daysAgo": "{days} days ago",
+      "weeksAgo": "{weeks} weeks ago",
+      "monthsAgo": "{months} months ago"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Armando Picón | Mobile Developer & Content Creator",
+      "description": "Android Engineer, Technical Leader, Speaker, Designer, and Content Creator"
+    },
+    "contact": {
+      "title": "Contact - Armando Picón",
+      "description": "Get in touch with me for projects, collaborations, or subscribe to my newsletter for tech content and updates."
+    }
+  }
+}

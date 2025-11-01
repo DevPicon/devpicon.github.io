@@ -1,16 +1,22 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Languages } from 'lucide-react';
 import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const t = useTranslations('nav');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navLinks = [
-    { label: 'Inicio', href: '/' },
-    { label: 'Contacto', href: '/contact' },
+    { label: t('home'), href: `/${locale}` },
+    { label: t('contact'), href: `/${locale}/contact` },
   ];
 
   useEffect(() => {
@@ -28,6 +34,12 @@ export default function Navbar() {
     setIsDarkMode(newMode);
     document.documentElement.classList.toggle('dark', newMode);
     localStorage.setItem('theme', newMode ? 'dark' : 'light');
+  };
+
+  const toggleLanguage = () => {
+    const newLocale = locale === 'es' ? 'en' : 'es';
+    const path = pathname.replace(`/${locale}`, `/${newLocale}`);
+    router.push(path);
   };
 
   return (
@@ -59,6 +71,17 @@ export default function Navbar() {
               </a>
             ))}
 
+            {/* Language Toggle Button */}
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-accent-blue transition-all duration-250 flex items-center gap-1"
+              aria-label="Toggle language"
+              title={locale === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            >
+              <Languages size={20} />
+              <span className="text-xs font-semibold uppercase">{locale === 'es' ? 'EN' : 'ES'}</span>
+            </button>
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
@@ -71,6 +94,15 @@ export default function Navbar() {
 
           {/* Mobile menu button and theme toggle */}
           <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-accent-blue transition-all duration-250 flex items-center gap-1"
+              aria-label="Toggle language"
+              title={locale === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            >
+              <Languages size={16} />
+              <span className="text-xs font-semibold uppercase">{locale === 'es' ? 'EN' : 'ES'}</span>
+            </button>
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-accent-yellow transition-all duration-250"

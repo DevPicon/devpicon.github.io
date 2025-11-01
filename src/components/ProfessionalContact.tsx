@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ProfessionalContact() {
   const [mounted, setMounted] = useState(false);
   const [copied, setCopied] = useState(false);
+  const t = useTranslations('contact.professional');
 
   useEffect(() => {
     setMounted(true);
@@ -58,10 +60,10 @@ export default function ProfessionalContact() {
             </motion.div>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-              Proyectos y colaboraciones
+              {t('title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              ¿Tienes un proyecto en mente? ¿Quieres colaborar en tu podcast o evento?
+              {t('description')}
             </p>
           </div>
 
@@ -81,7 +83,7 @@ export default function ProfessionalContact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Email profesional</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{t('emailLabel')}</p>
                   <a
                     href={`mailto:${email}`}
                     className="text-lg md:text-xl font-mono font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -99,14 +101,14 @@ export default function ProfessionalContact() {
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    ¡Copiado!
+                    {t('copied')}
                   </>
                 ) : (
                   <>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
-                    Copiar
+                    {t('copyButton')}
                   </>
                 )}
               </button>
@@ -121,7 +123,7 @@ export default function ProfessionalContact() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              Especialidades
+              {t('specialties.title')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
@@ -131,8 +133,8 @@ export default function ProfessionalContact() {
                       <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
                     </svg>
                   ),
-                  title: 'Desarrollo Android',
-                  description: 'Kotlin / Java / Jetpack Compose'
+                  title: t('specialties.android.title'),
+                  description: t('specialties.android.description')
                 },
                 {
                   icon: (
@@ -140,8 +142,8 @@ export default function ProfessionalContact() {
                       <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   ),
-                  title: 'Arquitectura de apps',
-                  description: 'MVVM / Clean Architecture / Modular'
+                  title: t('specialties.architecture.title'),
+                  description: t('specialties.architecture.description')
                 },
                 {
                   icon: (
@@ -149,8 +151,8 @@ export default function ProfessionalContact() {
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                     </svg>
                   ),
-                  title: 'Consultoría técnica',
-                  description: 'Code reviews / Mentoring / Tech decisions'
+                  title: t('specialties.consulting.title'),
+                  description: t('specialties.consulting.description')
                 },
                 {
                   icon: (
@@ -158,8 +160,8 @@ export default function ProfessionalContact() {
                       <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                     </svg>
                   ),
-                  title: 'Charlas y workshops',
-                  description: 'Eventos / Podcasts / Conferencias'
+                  title: t('specialties.speaking.title'),
+                  description: t('specialties.speaking.description')
                 }
               ].map((specialty, index) => (
                 <motion.div

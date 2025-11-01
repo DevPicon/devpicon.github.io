@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface ContentCardProps {
   type: 'video' | 'podcast' | 'blog';
@@ -20,21 +21,23 @@ export default function ContentCard({
   url,
   date,
 }: ContentCardProps) {
+  const t = useTranslations('home.latestContent');
+
   const typeConfig = {
     video: {
-      label: 'Último Video',
+      label: t('video'),
       bgGradient: 'from-red-500/20 to-red-900/20',
       borderColor: 'border-red-500/30',
       iconColor: 'text-red-400',
     },
     podcast: {
-      label: 'Último Podcast',
+      label: t('podcast'),
       bgGradient: 'from-green-500/20 to-green-900/20',
       borderColor: 'border-green-500/30',
       iconColor: 'text-green-400',
     },
     blog: {
-      label: 'Último Blog',
+      label: t('blog'),
       bgGradient: 'from-blue-500/20 to-blue-900/20',
       borderColor: 'border-blue-500/30',
       iconColor: 'text-blue-400',

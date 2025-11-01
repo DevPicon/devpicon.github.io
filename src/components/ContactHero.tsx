@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ContactHero() {
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations('contact.hero');
 
   useEffect(() => {
     setMounted(true);
@@ -16,10 +18,10 @@ export default function ContactHero() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              Let's Connect
+              {t('title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
-              I'm always open to new opportunities, collaborations, and interesting conversations.
+              {t('description')}
             </p>
           </div>
         </div>
@@ -66,7 +68,7 @@ export default function ContactHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Let's Connect
+            {t('title')}
           </motion.h1>
 
           <motion.p
@@ -75,7 +77,7 @@ export default function ContactHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            I'm always open to new opportunities, collaborations, and interesting conversations.
+            {t('description')}
           </motion.p>
 
           <motion.div
@@ -86,12 +88,12 @@ export default function ContactHero() {
           >
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              Available for projects
+              {t('availableProjects')}
             </span>
             <span className="hidden md:inline">•</span>
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-              Open to collaborations
+              {t('openCollabs')}
             </span>
           </motion.div>
         </div>

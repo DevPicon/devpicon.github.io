@@ -1,8 +1,10 @@
 'use client';
 
 import { Github, Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('footer');
   const socialLinks = [
     {
       name: 'GitHub',
@@ -60,15 +62,15 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-gray-500 dark:text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Armando Picón. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Armando Picón. {t('rights')}.</p>
           <p className="mt-2">
-            Hecho con{' '}
-            <span className="text-red-500" aria-label="amor">
+            {t('madeWith')}{' '}
+            <span className="text-red-500" aria-label={t('love')}>
               ❤️
             </span>{' '}
-            y{' '}
-            <span className="text-accent-blue" aria-label="código">
-              código
+            {t('and')}{' '}
+            <span className="text-accent-blue" aria-label={t('code')}>
+              {t('code')}
             </span>
           </p>
         </div>

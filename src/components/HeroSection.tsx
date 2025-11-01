@@ -5,17 +5,19 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import AnimatedText from './AnimatedText';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations('home.hero');
 
   const roles = [
-    'Mobile Developer',
-    'Android Engineer',
-    'Technical Leader',
-    'Speaker',
-    'Designer',
-    'Content Creator',
+    t('roles.mobileDev'),
+    t('roles.androidEng'),
+    t('roles.techLead'),
+    t('roles.speaker'),
+    t('roles.designer'),
+    t('roles.contentCreator'),
   ];
 
   useEffect(() => {
@@ -34,9 +36,9 @@ export default function HeroSection() {
             </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-4">
-            Hola, soy{' '}
+            {t('greeting')}{' '}
             <span className="bg-gradient-to-r from-accent-blue to-accent-yellow bg-clip-text text-transparent">
-              Armando
+              {t('name')}
             </span>
           </h1>
         </div>
@@ -78,9 +80,9 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4"
             >
-              Hola, soy{' '}
+              {t('greeting')}{' '}
               <span className="bg-gradient-to-r from-accent-blue to-accent-yellow bg-clip-text text-transparent">
-                Armando
+                {t('name')}
               </span>
             </motion.h1>
 
@@ -101,8 +103,7 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-8"
             >
-              Apasionado por la tecnología móvil y la creación de contenido.
-              Compartiendo conocimiento sobre desarrollo Android y liderazgo técnico.
+              {t('description')}
             </motion.p>
           </div>
         </div>
@@ -119,7 +120,7 @@ export default function HeroSection() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className="text-accent-blue hover:text-accent-yellow transition-colors cursor-pointer"
-            aria-label="Scroll to content"
+            aria-label={t('scrollLabel')}
           >
             <ChevronDown size={32} />
           </motion.a>
