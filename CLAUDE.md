@@ -217,19 +217,25 @@ Include icons for: GitHub, LinkedIn, Instagram, Twitter (X), YouTube
 - Updated all documentation to reflect new domain
 - Site now accessible at https://picon.dev and https://www.picon.dev
 
-#### Google Analytics 4 Implementation - COMPLETE
+#### Google Analytics 4 Implementation - COMPLETE ✅
 - Integrated Google Analytics 4 (Measurement ID: G-WRZ0G12DGD)
-- Created GoogleAnalytics component with gtag.js implementation
-- Implemented GDPR-compliant consent mode v2:
-  - `analytics_storage: 'denied'` by default
-  - `ad_storage: 'denied'` by default
-  - `ad_user_data: 'denied'` by default
-  - `ad_personalization: 'denied'` by default
-- Consent updates dynamically after user accepts cookies
+- **PROPERLY IMPLEMENTED** Google Consent Mode v2 following official Google Tag Platform documentation
+- Removed @next/third-parties package (insufficient consent mode control)
+- Direct gtag.js implementation with proper script loading order:
+  1. Default consent state (beforeInteractive strategy) - all denied by default
+  2. gtag.js script from Google CDN (afterInteractive strategy)
+  3. gtag initialization with measurement ID (afterInteractive strategy)
+- Consent mode defaults:
+  - `analytics_storage: 'denied'`
+  - `ad_storage: 'denied'`
+  - `ad_user_data: 'denied'`
+  - `ad_personalization: 'denied'`
+- Consent updates dynamically when user accepts/rejects via cookie banner
 - Properly configured page view tracking
 - Newsletter subscription tracked as custom event 'newsletter_signup'
+- **VERIFIED** with Google Tag Assistant - all checks passing ✅
 
-#### GDPR Cookie Consent Banner - COMPLETE
+#### GDPR Cookie Consent Banner - COMPLETE ✅
 - Created CookieConsent component with bilingual support (ES/EN)
 - Features:
   - Non-intrusive bottom banner
@@ -238,7 +244,12 @@ Include icons for: GitHub, LinkedIn, Instagram, Twitter (X), YouTube
   - 365-day consent persistence
   - Automatic dismissal after choice
   - Fully translated in both languages
-- Integrated with Google Analytics consent mode
+- **PROPERLY INTEGRATED** with Google Analytics Consent Mode v2:
+  - Ensures gtag is initialized before sending consent updates
+  - Sends proper consent update commands to dataLayer
+  - Accept: Updates all consent types to 'granted'
+  - Reject: Keeps all consent types as 'denied'
+  - Console debugging for verification
 - Complies with GDPR requirements for EU visitors
 
 #### Privacy Policy Implementation - COMPLETE
@@ -255,22 +266,38 @@ Include icons for: GitHub, LinkedIn, Instagram, Twitter (X), YouTube
 - Fully responsive and accessible design
 - GDPR compliant with clear explanations
 
+#### Consent Mode v2 Fix (Continuation Session) - COMPLETE ✅
+**Problem**: Initial implementation did not properly update consent when users interacted with cookie banner
+**Solution**: Complete rewrite following official Google documentation
+- Removed @next/third-parties/google package
+- Implemented direct gtag.js approach per Google Tag Platform docs
+- Fixed script loading order (critical for consent mode)
+- Added proper dataLayer initialization
+- Ensured consent updates sent correctly from CookieConsent component
+- Verified with Google Tag Assistant
+- Tested consent flow: default deny → user accepts → consent granted → analytics tracks
+
 #### All Features Tested and Working
 - ✅ Custom domain resolving correctly
 - ✅ SSL certificate active
-- ✅ Google Analytics tracking page views
+- ✅ Google Analytics tracking page views (with consent)
 - ✅ Cookie consent banner appearing for new visitors
 - ✅ Consent preferences persisting correctly
+- ✅ Consent Mode v2 properly updating on user action
+- ✅ Tag Assistant verification passing
 - ✅ Newsletter signup event tracking
 - ✅ Privacy Policy accessible in both languages
 - ✅ Footer links working properly
 - ✅ All builds passing successfully
 - ✅ Site deployed and live at https://picon.dev
+- ✅ GDPR fully compliant
 
 #### Commits Made This Session
 - `8625839` - docs: update documentation with custom domain picon.dev
 - `3c3281e` - feat: add Google Analytics 4 with GDPR cookie consent
 - `d7625a9` - feat: add Privacy Policy page with GDPR compliance
+- `2bf7fc5` - fix: implement proper Google Consent Mode v2 with gtag.js
+- `0686316` - fix: ensure gtag is properly initialized in CookieConsent
 
 ### Previous Session Work (2025-10-31)
 

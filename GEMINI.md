@@ -246,22 +246,33 @@ basePath: ''              // Custom domain configured
 - SSL certificate active and verified
 - Site accessible at https://picon.dev and https://www.picon.dev
 
-### Google Analytics 4 Implementation - COMPLETE
+### Google Analytics 4 Implementation - COMPLETE ✅
 - GA4 tracking code integrated (G-WRZ0G12DGD)
-- Created GoogleAnalytics component with gtag.js
-- GDPR-compliant consent mode v2 implemented:
+- **PROPERLY IMPLEMENTED** Google Consent Mode v2 following official Google Tag Platform documentation
+- Removed @next/third-parties package (insufficient control for consent mode)
+- Direct gtag.js implementation with correct script loading order:
+  1. Default consent (beforeInteractive) - all denied
+  2. gtag.js library (afterInteractive)
+  3. gtag initialization (afterInteractive)
+- GDPR-compliant consent mode v2:
   - All storage types denied by default
-  - Consent updates after user acceptance
+  - Consent updates properly when user accepts/rejects
+  - dataLayer initialized correctly
+  - Consent update commands sent properly
 - Page view tracking configured
 - Custom event tracking for newsletter signup
-- Properly integrated with cookie consent system
+- **VERIFIED** with Google Tag Assistant - all checks passing ✅
 
-### GDPR Cookie Consent - COMPLETE
+### GDPR Cookie Consent - COMPLETE ✅
 - CookieConsent component with bilingual support
 - Bottom banner, non-intrusive design
 - Accept/Reject buttons with clear actions
 - Preference stored in localStorage (365 days)
-- Integrated with Google Analytics consent mode
+- **PROPERLY INTEGRATED** with Google Analytics Consent Mode v2:
+  - Ensures gtag initialized before updates
+  - Sends correct consent update commands
+  - Console debugging for verification
+  - Tested and working correctly
 - Fully translated in Spanish and English
 - GDPR compliant for EU visitors
 
@@ -273,6 +284,16 @@ basePath: ''              // Custom domain configured
 - Added to Footer navigation
 - Fully responsive design
 - GDPR compliant with clear explanations
+
+### Consent Mode v2 Fix (Continuation Session) - COMPLETE ✅
+**Issue**: Initial implementation didn't properly update consent on user interaction
+**Solution**: Rewrote following official Google documentation
+- Removed abstraction library (@next/third-parties)
+- Direct gtag.js implementation
+- Fixed script loading order
+- Proper dataLayer initialization
+- Verified with Tag Assistant
+- All consent flows working correctly
 
 ### Previous Update (2025-10-31)
 
@@ -339,6 +360,8 @@ For detailed information on specific topics, refer to:
 Last Updated: 2025-11-01
 Status: Production - Fully Deployed with Custom Domain, Analytics, and GDPR Compliance
 Latest Commits:
-- 8625839 (docs: custom domain documentation)
-- 3c3281e (feat: Google Analytics 4 with GDPR consent)
+- 0686316 (fix: ensure gtag properly initialized in CookieConsent)
+- 2bf7fc5 (fix: implement proper Google Consent Mode v2 with gtag.js)
 - d7625a9 (feat: Privacy Policy with GDPR compliance)
+- 3c3281e (feat: Google Analytics 4 with GDPR consent)
+- 8625839 (docs: custom domain documentation)
