@@ -1,39 +1,56 @@
 'use client';
 
 import Script from 'next/script';
-import { useEffect, useState } from 'react';
 
 export default function GoogleAnalytics() {
   const GA_MEASUREMENT_ID = 'G-WRZ0G12DGD';
-  const [consent, setConsent] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Check user's consent preference
-    const savedConsent = localStorage.getItem('cookie-consent');
-    setConsent(savedConsent);
-  }, []);
-
-  // Default to denied until user accepts
-  const analyticsStorage = consent === 'accepted' ? 'granted' : 'denied';
 
   return (
     <>
+      {/* Consent Mode v2 - Must load BEFORE gtag.js */}
       <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
+        id="google-consent-mode"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
 
-            // Set default consent mode
+            // Default consent to 'denied' as a placeholder
+            // This will be updated based on user's choice
             gtag('consent', 'default', {
-              'analytics_storage': '${analyticsStorage}'
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'wait_for_update': 500
             });
+
+            // Check if user has already made a choice
+            const consent = localStorage.getItem('cookie-consent');
+            if (consent === 'accepted') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+            }
+          `,
+        }}
+      />
+
+      {/* Google Analytics gtag.js */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+
+      {/* GA Configuration */}
+      <Script
+        id="google-analytics-config"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
 
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}', {
