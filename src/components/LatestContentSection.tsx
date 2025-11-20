@@ -4,13 +4,13 @@ import ContentCard from './ContentCard';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface ContentData {
-  video: {
+  videos: Array<{
     title: string;
     description: string;
     url: string;
     date: string;
     image: string;
-  };
+  }>;
   podcast: {
     title: string;
     description: string;
@@ -47,7 +47,7 @@ function formatDate(dateString: string, locale: string, t: any): string {
 export default function LatestContentSection({ contentData }: LatestContentSectionProps) {
   const t = useTranslations();
   const locale = useLocale();
-  const { video, podcast, blog } = contentData;
+  const { videos, podcast, blog } = contentData;
 
   return (
     <section id="content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -63,16 +63,19 @@ export default function LatestContentSection({ contentData }: LatestContentSecti
         </p>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        {/* Video Card */}
-        <ContentCard
-          type="video"
-          title={video.title}
-          description={video.description}
-          url={video.url}
-          date={formatDate(video.date, locale, t)}
-          image={video.image}
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        {/* Video Cards - Show latest 2 videos */}
+        {videos.map((video, index) => (
+          <ContentCard
+            key={`video-${index}`}
+            type="video"
+            title={video.title}
+            description={video.description}
+            url={video.url}
+            date={formatDate(video.date, locale, t)}
+            image={video.image}
+          />
+        ))}
 
         {/* Podcast Card */}
         <ContentCard

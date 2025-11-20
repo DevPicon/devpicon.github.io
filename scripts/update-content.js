@@ -53,11 +53,11 @@ function parseXmlValue(xml, tag) {
 }
 
 /**
- * Obtiene el último video de YouTube usando la API
+ * Obtiene los 2 últimos videos de YouTube usando la API
  */
-async function getLatestYouTubeVideo() {
+async function getLatestYouTubeVideos() {
   try {
-    console.log('📺 Obteniendo último video de YouTube...');
+    console.log('📺 Obteniendo últimos 2 videos de YouTube...');
 
     const apiKey = process.env.YOUTUBE_API_KEY;
     const channelId = process.env.YOUTUBE_CHANNEL_ID;
@@ -65,35 +65,34 @@ async function getLatestYouTubeVideo() {
     if (!apiKey || !channelId) {
       console.log('⚠️  YOUTUBE_API_KEY o YOUTUBE_CHANNEL_ID no configurados');
       console.log('   Tip: Configura las variables en .env.local o GitHub Secrets');
-      return {
+      return [{
         title: 'Configura YouTube API para auto-actualizar',
         description: 'Ve a API_SETUP.md para instrucciones',
         url: 'https://youtube.com/@devpicon',
         date: new Date().toISOString().split('T')[0],
         image: ''
-      };
+      }];
     }
 
-    const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&order=date&maxResults=1&type=video`;
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&order=date&maxResults=2&type=video`;
 
     const response = await fetchUrl(url);
     const data = JSON.parse(response);
 
     if (data.items && data.items.length > 0) {
-      const video = data.items[0];
-      return {
+      return data.items.map(video => ({
         title: video.snippet.title,
         description: video.snippet.description.substring(0, 200) || video.snippet.title,
         url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
         date: video.snippet.publishedAt.split('T')[0],
         image: video.snippet.thumbnails.high?.url || video.snippet.thumbnails.default?.url || ''
-      };
+      }));
     }
 
-    return null;
+    return [];
   } catch (error) {
-    console.error('❌ Error obteniendo video de YouTube:', error.message);
-    return null;
+    console.error('❌ Error obteniendo videos de YouTube:', error.message);
+    return [];
   }
 }
 
@@ -274,8 +273,8 @@ async function updateContentFile() {
   console.log('🚀 Actualizando contenido...\n');
 
   // Obtener contenido de todas las fuentes
-  const [youtube, podcast, devto, medium] = await Promise.all([
-    getLatestYouTubeVideo(),
+  const [videos, podcast, devto, medium] = await Promise.all([
+    getLatestYouTubeVideos(),
     getLatestPodcastEpisode(),
     getLatestDevToArticle(),
     getLatestMediumArticle()
@@ -301,7 +300,7 @@ async function updateContentFile() {
   // Actualizar con el nuevo contenido
   const newContent = {
     latestContent: {
-      video: youtube || currentContent.latestContent?.video || {},
+      videos: videos.length > 0 ? videos : (currentContent.latestContent?.videos || []),
       podcast: podcast || currentContent.latestContent?.podcast || {},
       blog: blog || currentContent.latestContent?.blog || {}
     },
@@ -317,7 +316,11 @@ async function updateContentFile() {
 
   console.log('\n✅ Contenido actualizado exitosamente!\n');
   console.log('📊 Resumen:');
-  console.log(`   Video: ${newContent.latestContent.video.title}`);
+  if (videos.length > 0) {
+    videos.forEach((video, index) => {
+      console.log(`   Video ${index + 1}: ${video.title}`);
+    });
+  }
   console.log(`   Podcast: ${newContent.latestContent.podcast.title}`);
   console.log(`   Blog: ${newContent.latestContent.blog.title}`);
   console.log(`\n📅 Última actualización: ${newContent.lastUpdated}`);

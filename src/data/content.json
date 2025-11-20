@@ -1,12 +1,14 @@
 {
   "latestContent": {
-    "video": {
-      "title": "🚀 Android actualiza su ruta de aprendizaje para KMP: todo lo que debes saber.",
-      "description": "Kotlin Multiplatform acaba de recibir una actualización importante en su Pathway oficial de Android Developers, y vale la pena ...",
-      "url": "https://www.youtube.com/watch?v=TOCmftJg5QQ",
-      "date": "2025-11-10",
-      "image": "https://i.ytimg.com/vi/TOCmftJg5QQ/hqdefault.jpg"
-    },
+    "videos": [
+      {
+        "title": "🚀 Android actualiza su ruta de aprendizaje para KMP: todo lo que debes saber.",
+        "description": "Kotlin Multiplatform acaba de recibir una actualización importante en su Pathway oficial de Android Developers, y vale la pena ...",
+        "url": "https://www.youtube.com/watch?v=TOCmftJg5QQ",
+        "date": "2025-11-10",
+        "image": "https://i.ytimg.com/vi/TOCmftJg5QQ/hqdefault.jpg"
+      }
+    ],
     "podcast": {
       "title": "Del meme al mérito: ¿Cómo crear reputación desde el código? - Joel Humberto Gomez | S04E07",
       "description": "En este último episodio con invitado de la Temporada 4 de Codalot Podcast, converso con Joel Humberto Gómez —Frontend Developer en Platzi, FullStack JS Developer y Google Developer Expert en Web Techn",
