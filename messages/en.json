@@ -1,7 +1,16 @@
 {
   "nav": {
+    "navigationLabel": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme",
+    "homeLinkLabel": "Armando Picón home",
+    "switchToEnglish": "Switch to English",
+    "switchToSpanish": "Switch to Spanish",
     "home": "Home",
-    "contact": "Contact"
+    "contact": "Contact",
+    "contributions": "Contributions"
   },
   "hero": {
     "greeting": "Hi! I'm",
@@ -16,7 +25,9 @@
     }
   },
   "CurrentFocus": {
+    "sectionLabel": "Now",
     "title": "What I'm building right now",
+    "explore": "Explore project",
     "aiLabsTitle": "🧠 On-Device AI Labs",
     "aiLabsDesc": "Benchmarking and implementing local AI models on mobile. Exploring Model Context Protocol (MCP) and on-device execution to reduce latency and protect user privacy.",
     "sslTitle": "🔒 SSL Pinning Hands-on",
@@ -126,6 +137,7 @@
     }
   },
   "footer": {
+    "socialLabel": "Social links",
     "rights": "All rights reserved",
     "madeWith": "Made with",
     "and": "and",
@@ -133,11 +145,33 @@
     "code": "code",
     "privacy": "Privacy Policy"
   },
+  "contributions": {
+    "title": "Contributions & Talks",
+    "description": "A timeline of my public presentations, workshops, and technical talks in the community.",
+    "filterByTopic": "Filter by topic",
+    "all": "All",
+    "slides": "Slides",
+    "video": "Video"
+  },
   "home": {
     "hero": {
+      "eyebrow": "Mobile systems · AI on-device",
+      "headline": "Mobile AI,",
+      "headlineHighlight": "on-device.",
+      "projectsCta": "Explore projects",
+      "contactCta": "Get in touch",
+      "portraitAlt": "Armando Picón at KotlinConf 2026",
+      "portraitCaption": "Mobile engineer · Codalot host",
+      "proof": {
+        "label": "What I work on",
+        "mobileLabel": "Platforms",
+        "focusLabel": "Current focus",
+        "focusValue": "On-device AI",
+        "podcastLabel": "Podcast"
+      },
       "greeting": "Hi, I'm",
       "name": "Armando",
-      "description": "Tech Lead and Senior Mobile Developer focused on scalable Android, Kotlin Multiplatform, and high-quality mobile architecture.",
+      "description": "I build Android, Kotlin Multiplatform and local AI systems. I care about what it takes to work beyond the demo: offline, with low latency, and with data under your control.",
       "status": "📍 Currently in Munich for the Golden Kodee Awards 2026 (In-Person Presence Finalist).",
       "availability": "🟢 Open to new Tech Lead / Senior Mobile roles.",
       "scrollLabel": "Scroll to content",
@@ -149,6 +183,7 @@
       }
     },
     "latestContent": {
+      "sectionLabel": "In public",
       "title": "Latest",
       "titleHighlight": "Content",
       "video": "Latest Video",
@@ -166,8 +201,8 @@
   },
   "metadata": {
     "home": {
-      "title": "Armando Picón | Tech Lead & Senior Mobile Developer",
-      "description": "Tech Lead, Senior Mobile Developer, Android Engineer, and KMP Enthusiast"
+      "title": "Armando Picón | Mobile Systems & On-device AI",
+      "description": "Mobile engineer focused on Android, Kotlin Multiplatform, and on-device AI. Host of Codalot and builder of mobile systems."
     },
     "contact": {
       "title": "Contact - Armando Picón",
@@ -185,7 +220,7 @@
     "dismiss": "Close"
   },
   "cookieConsent": {
-    "title": "🍪 Cookie Usage",
+    "title": "Cookie preferences",
     "description": "We use cookies to analyze site traffic and improve your experience. Your data is processed anonymously.",
     "learnMore": "Learn more",
     "accept": "Accept",

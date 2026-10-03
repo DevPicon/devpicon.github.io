@@ -23,7 +23,7 @@ export default function ProfessionalContact() {
 
   if (!mounted) {
     return (
-      <section className="py-16 md:py-24">
+      <section className="contact-section contact-professional">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100 text-center">
@@ -36,10 +36,10 @@ export default function ProfessionalContact() {
   }
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="contact-section contact-professional">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
-          className="max-w-3xl mx-auto"
+          className="contact-section-inner"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -69,7 +69,7 @@ export default function ProfessionalContact() {
 
           {/* Email Card */}
           <motion.div
-            className="bg-gradient-to-br from-blue-50 to-yellow-50 dark:from-blue-950/20 dark:to-yellow-950/20 rounded-2xl p-8 mb-8 border border-blue-200 dark:border-blue-800"
+            className="contact-email-panel rounded-2xl p-8 mb-8 border"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -77,7 +77,7 @@ export default function ProfessionalContact() {
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="contact-email-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -86,7 +86,7 @@ export default function ProfessionalContact() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{t('emailLabel')}</p>
                   <a
                     href={`mailto:${email}`}
-                    className="text-lg md:text-xl font-mono font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="contact-email-link text-lg md:text-xl font-mono font-semibold transition-colors"
                   >
                     {email}
                   </a>
@@ -94,7 +94,7 @@ export default function ProfessionalContact() {
               </div>
               <button
                 onClick={copyEmail}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap"
+                className="contact-copy-button px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap"
               >
                 {copied ? (
                   <>
@@ -166,7 +166,7 @@ export default function ProfessionalContact() {
               ].map((specialty, index) => (
                 <motion.div
                   key={specialty.title}
-                  className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+                  className="contact-specialty-card rounded-lg p-6 border transition-colors"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -174,7 +174,7 @@ export default function ProfessionalContact() {
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 flex-shrink-0">
+                    <div className="contact-specialty-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                       {specialty.icon}
                     </div>
                     <div>

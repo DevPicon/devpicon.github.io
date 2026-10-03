@@ -31,7 +31,7 @@ interface LatestContentSectionProps {
   contentData: ContentData;
 }
 
-function formatDate(dateString: string, locale: string, t: any): string {
+function formatDate(dateString: string, locale: string, t: (key: string, values?: Record<string, string | number>) => string): string {
   const date = new Date(dateString);
   const now = new Date();
   const diffTime = Math.abs(now.getTime() - date.getTime());
@@ -50,52 +50,51 @@ export default function LatestContentSection({ contentData }: LatestContentSecti
   const { videos, podcast, blog } = contentData;
 
   return (
-    <section id="content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-gray-100 mb-4">
-        {t('home.latestContent.title')}{' '}
-        <span className="text-accent-blue">{t('home.latestContent.titleHighlight')}</span>
-      </h2>
+    <section id="content" className="latest-section">
+      <div className="latest-section-inner">
+        <div className="section-heading-row latest-heading-row">
+          <p className="section-eyebrow">02 / {t('home.latestContent.sectionLabel')}</p>
+          <h2 className="section-title">
+            {t('home.latestContent.title')}{' '}
+            <span className="section-title-accent">{t('home.latestContent.titleHighlight')}</span>
+          </h2>
+        </div>
 
-      {/* Language note for English version */}
-      {locale === 'en' && (
-        <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-8 max-w-2xl mx-auto">
-          {t('home.latestContent.note')}
-        </p>
-      )}
+        {locale === 'en' && (
+          <p className="latest-note">{t('home.latestContent.note')}</p>
+        )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-        {/* Video Cards - Show latest 2 videos */}
-        {videos.map((video, index) => (
+        <div className="latest-grid">
+          {videos.map((video, index) => (
+            <ContentCard
+              key={`video-${index}`}
+              type="video"
+              title={video.title}
+              description={video.description}
+              url={video.url}
+              date={formatDate(video.date, locale, t)}
+              image={video.image}
+            />
+          ))}
+
           <ContentCard
-            key={`video-${index}`}
-            type="video"
-            title={video.title}
-            description={video.description}
-            url={video.url}
-            date={formatDate(video.date, locale, t)}
-            image={video.image}
+            type="podcast"
+            title={podcast.title}
+            description={podcast.description}
+            url={podcast.url}
+            date={formatDate(podcast.date, locale, t)}
+            image={podcast.image}
           />
-        ))}
 
-        {/* Podcast Card */}
-        <ContentCard
-          type="podcast"
-          title={podcast.title}
-          description={podcast.description}
-          url={podcast.url}
-          date={formatDate(podcast.date, locale, t)}
-          image={podcast.image}
-        />
-
-        {/* Blog Card */}
-        <ContentCard
-          type="blog"
-          title={blog.title}
-          description={blog.description}
-          url={blog.url}
-          date={formatDate(blog.date, locale, t)}
-          image={blog.image}
-        />
+          <ContentCard
+            type="blog"
+            title={blog.title}
+            description={blog.description}
+            url={blog.url}
+            date={formatDate(blog.date, locale, t)}
+            image={blog.image}
+          />
+        </div>
       </div>
     </section>
   );

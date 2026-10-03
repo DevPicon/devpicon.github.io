@@ -8,43 +8,18 @@ export default function Footer() {
   const t = useTranslations('footer');
   const locale = useLocale();
   const socialLinks = [
-    {
-      name: 'GitHub',
-      icon: Github,
-      url: 'https://github.com/devpicon',
-      color: 'hover:text-gray-400',
-    },
-    {
-      name: 'LinkedIn',
-      icon: Linkedin,
-      url: 'https://linkedin.com/in/devpicon',
-      color: 'hover:text-blue-400',
-    },
-    {
-      name: 'Instagram',
-      icon: Instagram,
-      url: 'https://instagram.com/devpicon',
-      color: 'hover:text-pink-400',
-    },
-    {
-      name: 'Twitter',
-      icon: Twitter,
-      url: 'https://twitter.com/devpicon',
-      color: 'hover:text-sky-400',
-    },
-    {
-      name: 'YouTube',
-      icon: Youtube,
-      url: 'https://youtube.com/@devpicon',
-      color: 'hover:text-red-400',
-    },
+    { name: 'GitHub', icon: Github, url: 'https://github.com/devpicon' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/devpicon' },
+    { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/devpicon' },
+    { name: 'Twitter', icon: Twitter, url: 'https://twitter.com/devpicon' },
+    { name: 'YouTube', icon: Youtube, url: 'https://youtube.com/@devpicon' },
   ];
 
   return (
-    <footer className="bg-white dark:bg-[#0b0f19] border-t border-gray-200 dark:border-gray-800 py-8 mt-20 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-6">
+    <footer className="site-footer">
+      <div className="site-footer-inner">
+        <a className="footer-wordmark" href={'/' + locale}>ARMANDO PICÓN</a>
+        <nav className="footer-social" aria-label={t('socialLabel')}>
           {socialLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -53,36 +28,20 @@ export default function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-gray-500 dark:text-gray-400 ${link.color} transition-colors duration-250`}
                 aria-label={link.name}
+                className="footer-social-link"
               >
-                <Icon size={24} />
+                <Icon size={17} aria-hidden="true" />
               </a>
             );
           })}
-        </div>
-
-        {/* Copyright */}
-        <div className="text-center text-gray-500 dark:text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Armando Picón. {t('rights')}.</p>
-          <p className="mt-2">
-            {t('madeWith')}{' '}
-            <span className="text-red-500" aria-label={t('love')}>
-              ❤️
-            </span>{' '}
-            {t('and')}{' '}
-            <span className="text-accent-blue" aria-label={t('code')}>
-              {t('code')}
-            </span>
-          </p>
-          <p className="mt-3">
-            <Link
-              href={`/${locale}/privacy`}
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              {t('privacy')}
-            </Link>
-          </p>
+        </nav>
+        <div className="footer-baseline">
+          <span>© {new Date().getFullYear()} Armando Picón. {t('rights')}.</span>
+          <span className="footer-signature">Android · KMP · AI On-Device</span>
+          <Link href={'/' + locale + '/privacy'} className="footer-privacy">
+            {t('privacy')}
+          </Link>
         </div>
       </div>
     </footer>

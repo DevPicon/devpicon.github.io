@@ -42,17 +42,17 @@ export default async function Home({ params }: { params: { locale: string } }) {
   ];
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0b0f19] transition-colors duration-300">
+    <main className="home-page">
       <HeroSection />
-      <section id="focus" className="border-y border-gray-200 bg-gray-50/80 px-4 py-16 dark:border-gray-800 dark:bg-gray-900/30 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-gray-100 md:text-4xl">
-            {focusT('title')}
-          </h2>
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {focusCards.map((card) => {
-              const className = "block h-full rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 dark:border-gray-700 dark:bg-gray-800";
-              const interactiveClassName = `${className} hover:-translate-y-1 hover:border-blue-400 hover:shadow-xl dark:hover:border-blue-500`;
+      <section id="focus" className="work-section">
+        <div className="work-section-inner">
+          <div className="section-heading-row">
+            <p className="section-eyebrow">01 / {focusT('sectionLabel')}</p>
+            <h2 className="section-title">{focusT('title')}</h2>
+          </div>
+          <div className="work-grid">
+            {focusCards.map((card, index) => {
+              const className = "work-card";
 
               if (card.href) {
                 return (
@@ -61,24 +61,27 @@ export default async function Home({ params }: { params: { locale: string } }) {
                     href={card.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={interactiveClassName}
+                    className={className}
                   >
-                    <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-gray-100">
+                    <span className="work-card-number" aria-hidden="true">0{index + 1}</span>
+                    <h3 className="work-card-title">
                       {card.title}
                     </h3>
-                    <p className="text-sm leading-6 text-gray-600 dark:text-gray-400">
+                    <p className="work-card-description">
                       {card.description}
                     </p>
+                    <span className="work-card-link">{focusT('explore')} <span aria-hidden="true">↗</span></span>
                   </a>
                 );
               }
 
               return (
                 <div key={card.title} className={className}>
-                  <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-gray-100">
+                  <span className="work-card-number" aria-hidden="true">0{index + 1}</span>
+                  <h3 className="work-card-title">
                     {card.title}
                   </h3>
-                  <p className="text-sm leading-6 text-gray-600 dark:text-gray-400">
+                  <p className="work-card-description">
                     {card.description}
                   </p>
                 </div>
