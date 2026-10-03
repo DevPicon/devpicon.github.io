@@ -6,19 +6,18 @@ jest.mock('../AnimatedText', () => function MockAnimatedText({ phrases }: { phra
 });
 
 describe('HeroSection', () => {
-  it('renders without errors', () => {
+  it('renders the mobile AI headline', () => {
     render(<HeroSection />);
 
-    expect(screen.getByRole('heading', { name: /hola, soy armando/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'La IA móvil, en el dispositivo.' })).toBeInTheDocument();
   });
 
-  it('renders the senior mobile role and the new status badges', async () => {
+  it('renders the current focus and availability', () => {
     render(<HeroSection />);
 
-    expect((await screen.findAllByText(/Senior Mobile Developer/)).length).toBeGreaterThan(0);
-    expect(
-      screen.getByText('📍 Actualmente en Múnich por los Golden Kodee Awards 2026 (finalista en In-Person Presence).')
-    ).toBeInTheDocument();
+    expect(screen.getByText('Mobile systems · AI on-device')).toBeInTheDocument();
+    expect(screen.getByText('AI On-Device')).toBeInTheDocument();
     expect(screen.getByText('🟢 Abierto a nuevos roles Tech Lead / Senior Mobile.')).toBeInTheDocument();
+    expect(screen.getByAltText('Armando Picón en KotlinConf 2026')).toBeInTheDocument();
   });
 });

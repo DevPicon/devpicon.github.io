@@ -32,7 +32,7 @@ export default function NewsletterSection() {
 
   if (!mounted) {
     return (
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/50">
+      <section className="contact-section contact-newsletter">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
@@ -50,20 +50,20 @@ export default function NewsletterSection() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/50">
+    <section className="contact-section contact-newsletter">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
-          className="max-w-3xl mx-auto"
+          className="contact-newsletter-shell max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12 border border-gray-200 dark:border-gray-700">
+          <div className="contact-newsletter-panel rounded-2xl shadow-lg p-8 md:p-12 border">
             {/* Header */}
             <div className="text-center mb-8">
               <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4"
+                className="contact-newsletter-icon inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
@@ -123,7 +123,7 @@ export default function NewsletterSection() {
                       <input
                         type="email"
                         name="EMAIL"
-                        className="required email w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        className="contact-newsletter-input required email w-full px-4 py-3 rounded-lg border focus:ring-2 transition-all"
                         id="mce-EMAIL"
                         required
                         placeholder={t('form.placeholder.email')}
@@ -142,7 +142,7 @@ export default function NewsletterSection() {
                           type="submit"
                           name="subscribe"
                           id="mc-embedded-subscribe"
-                          className="button w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-250 flex items-center justify-center gap-2"
+                          className="contact-newsletter-button button w-full font-semibold py-3 px-6 rounded-lg transition-all duration-250 flex items-center justify-center gap-2"
                         >
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

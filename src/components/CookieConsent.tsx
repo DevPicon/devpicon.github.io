@@ -77,34 +77,34 @@ export default function CookieConsent() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white dark:bg-gray-800 border-t-2 border-gray-200 dark:border-gray-700 shadow-lg">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+    <div className="cookie-banner">
+      <div className="cookie-banner-inner">
+        <div className="cookie-copy">
+          <div className="cookie-copy-main">
+            <h3 className="cookie-title">
               {t('title')}
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="cookie-description">
               {t('description')}{' '}
               <a
                 href={`/${locale}/privacy`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="cookie-link"
               >
                 {t('learnMore')}
               </a>
             </p>
           </div>
 
-          <div className="flex gap-3 flex-shrink-0">
+          <div className="cookie-actions">
             <button
               onClick={rejectCookies}
-              className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors"
+              className="cookie-button cookie-button-secondary"
             >
               {t('reject')}
             </button>
             <button
               onClick={acceptCookies}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors"
+              className="cookie-button cookie-button-primary"
             >
               {t('accept')}
             </button>

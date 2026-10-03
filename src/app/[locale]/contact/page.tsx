@@ -18,11 +18,11 @@ export default async function ContactPage({ params }: { params: { locale: string
   const { locale } = params;
   unstable_setRequestLocale(locale);
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0b0f19] transition-colors">
+    <main className="contact-page">
       <ContactHero />
-      <NewsletterSection />
       <ProfessionalContact />
       <SocialLinks />
+      <NewsletterSection />
     </main>
   );
 }

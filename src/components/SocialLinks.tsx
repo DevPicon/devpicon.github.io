@@ -89,7 +89,7 @@ export default function SocialLinks() {
 
   if (!mounted) {
     return (
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/50">
+      <section className="contact-section contact-social">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900 dark:text-gray-100 text-center">
@@ -102,7 +102,7 @@ export default function SocialLinks() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/50">
+    <section className="contact-section contact-social">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
@@ -129,7 +129,7 @@ export default function SocialLinks() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-700 ${social.hoverColor} transition-all hover:shadow-lg group`}
+                className={`contact-social-card bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-700 ${social.hoverColor} transition-all hover:shadow-lg group`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -137,7 +137,7 @@ export default function SocialLinks() {
                 whileHover={{ y: -4 }}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${social.color} rounded-lg flex items-center justify-center text-white flex-shrink-0`}>
+                  <div className={`contact-social-icon w-12 h-12 bg-gradient-to-br ${social.color} rounded-lg flex items-center justify-center text-white flex-shrink-0`}>
                     {social.icon}
                   </div>
                   <svg className="w-5 h-5 text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
