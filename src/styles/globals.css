@@ -1210,6 +1210,28 @@ footer {
   margin: 0 0 2.5rem;
 }
 
+.publication-discussion {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--site-line);
+}
+
+.publication-discussion h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.publication-discussion p {
+  color: var(--site-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.publication-discussion a {
+  color: var(--site-accent-soft);
+  text-underline-offset: 0.2em;
+}
+
 .publication-cover img {
   display: block;
   width: 100%;

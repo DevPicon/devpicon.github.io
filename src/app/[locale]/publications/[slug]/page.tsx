@@ -88,6 +88,13 @@ export default function PublicationPage({ params }: PageProps) {
         <figcaption>{locale === 'es' ? 'Intención, generación, verificación y decisión. Ilustración generada con IA.' : 'Intent, generation, verification and decision. AI-generated illustration.'}</figcaption>
       </figure>
       <PublicationContent markdown={readPublication(publication, locale)} />
+      {publication.discussionUrl && <aside className="publication-discussion">
+        <h2>{locale === 'es' ? 'Sigamos la conversación' : 'Continue the conversation'}</h2>
+        <p>{locale === 'es'
+          ? 'La versión inglesa también está publicada en DEV Community. Puedes dejar tus preguntas, objeciones y ejemplos en sus comentarios.'
+          : 'The English version is also published on DEV Community. Share your questions, counterarguments and examples in its comments.'}</p>
+        <a href={publication.discussionUrl}>{locale === 'es' ? 'Comentar en DEV Community ↗' : 'Discuss on DEV Community ↗'}</a>
+      </aside>}
     </article>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
   </main>;
