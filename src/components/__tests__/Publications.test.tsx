@@ -19,13 +19,17 @@ describe('Bilingual publications', () => {
   it.each(['es', 'en'])('renders the %s article, six references and a language alternative', (locale) => {
     render(<PublicationPage params={{ locale, slug: 'ai-assisted-engineering' }} />);
     expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
-    expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(5);
+    expect(screen.getByRole('heading', { name: locale === 'es' ? 'Mantener explícita la decisión de aceptar' : 'Keep the acceptance decision explicit' })).toBeInTheDocument();
     const other = locale === 'es' ? 'en' : 'es';
     expect(screen.getByRole('link', { name: locale === 'es' ? 'Read in English' : 'Leer en español' })).toHaveAttribute('href', `/${other}/publications/ai-assisted-engineering/`);
-    const externalLinks = screen.getAllByRole('link').filter((link) => link.getAttribute('href')?.startsWith('https://'));
+    const externalLinks = screen.getAllByRole('link').filter((link) => {
+      const href = link.getAttribute('href');
+      return href?.startsWith('https://') && !href.startsWith('https://dev.to/');
+    });
     expect(externalLinks).toHaveLength(6);
     expect(screen.getByText(locale === 'es' ? /el ejemplo móvil es hipotético/i : /the mobile example is hypothetical/i)).toBeInTheDocument();
     expect(screen.getByText('PROJECT_GUIDE.md')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: locale === 'es' ? 'Comentar en DEV Community ↗' : 'Discuss on DEV Community ↗' })).toHaveAttribute('href', 'https://dev.to/devpicon/ai-can-write-more-of-the-code-we-still-have-to-engineer-the-system-3e7#comments');
   });
 
   it('keeps source references identical across translations', () => {

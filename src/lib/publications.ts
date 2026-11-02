@@ -7,6 +7,7 @@ export interface Publication {
   date: string;
   title: Record<Locale, string>;
   summary: Record<Locale, string>;
+  discussionUrl?: string;
   cover: {
     src: string;
     social: string;
@@ -19,6 +20,7 @@ export interface Publication {
 export const publications: Publication[] = [{
   slug: 'ai-assisted-engineering',
   date: '2026-11-01',
+  discussionUrl: 'https://dev.to/devpicon/ai-can-write-more-of-the-code-we-still-have-to-engineer-the-system-3e7#comments',
   cover: {
     src: '/images/publications/ai-assisted-engineering.webp',
     social: 'https://picon.dev/images/publications/ai-assisted-engineering-social.jpg',

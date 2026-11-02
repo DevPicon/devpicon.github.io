@@ -37,3 +37,9 @@ Scope: add the approved image below the article header; expose the image in Open
 Acceptance: both locales show the same responsive image without cropping its content, with localized alt text and explicit dimensions. The social image is publicly accessible and metadata uses an absolute URL. Image loading does not shift the article layout.
 
 Checks: existing Jest tests and production build; inspect generated image metadata, desktop/mobile rendering and public asset response after deployment.
+
+## US-05: Find the article's discussion
+
+As a reader of either language version, I want a direct link to the DEV discussion so I can leave comments without a separate comment service on the static site.
+
+Scope and acceptance: show a localized discussion link after the article, pointing to the published English DEV article's comments. Preserve article content and canonical URLs. Check the target and both generated pages, then run the existing tests and build.
