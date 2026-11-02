@@ -1,0 +1,74 @@
+[
+  {
+    "id": "compose-drawing-basics",
+    "title": "Domina el Dibujo en Android con Compose - Parte 1",
+    "titleLanguage": "es",
+    "language": "es",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=JSIm-_NJvTg",
+    "provenance": {
+      "source": "https://www.youtube.com/watch?v=JSIm-_NJvTg",
+      "note": "Public title and description reviewed 2026-11-01. Describes Canvas, coordinates, Offset, drawText and drawRect; links Speaker Deck dibujo-en-compose. Tutorial, not the DroidesChile event recording."
+    }
+  },
+  {
+    "id": "compose-possession-chart",
+    "title": "Dominando Gráficos en Android: Crea un Gráfico de Posesión con Jetpack Compose ⚽",
+    "titleLanguage": "es",
+    "language": "es",
+    "kind": "series",
+    "url": "https://www.youtube.com/playlist?list=PLFSffqEi7-DwyySmHjT8_66pbs_mYeQWg",
+    "provenance": {
+      "source": "https://www.youtube.com/playlist?list=PLFSffqEi7-DwyySmHjT8_66pbs_mYeQWg",
+      "note": "Public playlist metadata reviewed 2026-11-01: five videos on a donut/possession chart, arcs, percentages, team logos and animation in Jetpack Compose. Selected by subject, not as an event recording."
+    }
+  },
+  {
+    "id": "compose-rest-timer",
+    "title": "🎯 Creando un Temporizador de Descanso Interactivo con Jetpack Compose",
+    "titleLanguage": "es",
+    "language": "es",
+    "kind": "series",
+    "url": "https://www.youtube.com/playlist?list=PLFSffqEi7-Dx0s_HP1V2hEZpAW3Z_48NH",
+    "provenance": {
+      "source": "https://www.youtube.com/playlist?list=PLFSffqEi7-Dx0s_HP1V2hEZpAW3Z_48NH",
+      "note": "Public playlist metadata reviewed 2026-11-01: five videos on drawing a rest timer, controls, phases, progress and an iOS bonus. Existing playlist order is preserved on YouTube; no claim is made that its order is a curated learning progression."
+    }
+  },
+  {
+    "id": "compose-timer-ios",
+    "title": "🎁 Bonus Track: Llevando el Temporizador a iOS con Compose Multiplatform",
+    "titleLanguage": "es",
+    "language": "es",
+    "kind": "video",
+    "url": "https://www.youtube.com/watch?v=Btleqdcc7vE",
+    "provenance": {
+      "source": "https://www.youtube.com/watch?v=Btleqdcc7vE",
+      "note": "Public description reviewed 2026-11-01: adapts the timer to Android/iOS using Kotlin Multiplatform, resources and shared UI. Relevant to the cross-platform graphics talk, not a recording of mDevConf."
+    }
+  },
+  {
+    "id": "kmp-from-zero",
+    "title": "KMP DESDE CERO",
+    "titleLanguage": "es",
+    "language": "es",
+    "kind": "series",
+    "url": "https://www.youtube.com/playlist?list=PLFSffqEi7-DwB7crTtmlHcnbfioFR4d4_",
+    "provenance": {
+      "source": "https://www.youtube.com/playlist?list=PLFSffqEi7-DwB7crTtmlHcnbfioFR4d4_",
+      "note": "Public playlist metadata reviewed 2026-11-01: introduction, installation, shared app, UI, dependencies, shared logic and Flow interop with SKIE/KMP-NativeCoroutines. Introductory background for the cross-platform talk; not claimed current for every tool version."
+    }
+  },
+  {
+    "id": "coroutines-101",
+    "title": "Kotlin Coroutines 101",
+    "titleLanguage": "es",
+    "language": "es",
+    "kind": "series",
+    "url": "https://www.youtube.com/playlist?list=PLFSffqEi7-DxzWhCbfFfUzxcqEMdQtwaP",
+    "provenance": {
+      "source": "https://www.youtube.com/playlist?list=PLFSffqEi7-DxzWhCbfFfUzxcqEMdQtwaP",
+      "note": "Public playlist metadata reviewed 2026-11-01: suspend functions, coroutine creation, jobs, exceptions and async/await/deferred, plus a talk. Related Kotlin material; playlist can include both tutorial and talk formats, and is not this event recording."
+    }
+  }
+]

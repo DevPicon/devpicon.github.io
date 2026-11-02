@@ -1,6 +1,6 @@
 import { render, screen, within, cleanup } from '@testing-library/react';
 import TalksPage, { generateMetadata } from '@/app/[locale]/talks/page';
-import { talks, sortTalks, talkDate } from '@/lib/talks';
+import { talks, sortTalks, talkDate, talkResources, relatedResourcesFor } from '@/lib/talks';
 import sitemap from '@/app/sitemap';
 
 jest.mock('@/i18n', () => ({ locales: ['es', 'en'] }));
@@ -71,5 +71,59 @@ describe('Event-linked talks archive', () => {
 
   it('rejects unknown site languages', () => {
     expect(() => TalksPage({ params: { locale: 'fr' } })).toThrow('NEXT_NOT_FOUND');
+  });
+});
+
+describe('YouTube recording and practice resources', () => {
+  it('links the organizer recording to the exact DevFest appearance', () => {
+    render(<TalksPage params={{ locale: 'es' }} />);
+    const entry = screen.getByRole('heading', { name: 'Coroutines on the way!' }).closest('article')!;
+    expect(within(entry).getByRole('link', { name: 'Grabación' })).toHaveAttribute('href', 'https://www.youtube.com/watch?v=70EAAhb0FlY');
+    const practice = within(entry).getByRole('region', { name: 'Practica este tema' });
+    expect(within(practice).queryByRole('link', { name: 'Grabación' })).not.toBeInTheDocument();
+    expect(within(practice).getByRole('link', { name: /Kotlin Coroutines 101/ })).toHaveAttribute('href', 'https://www.youtube.com/playlist?list=PLFSffqEi7-DxzWhCbfFfUzxcqEMdQtwaP');
+  });
+
+  it('uses the event month rather than the video upload date for DroidesChile', () => {
+    render(<TalksPage params={{ locale: 'es' }} />);
+    const entry = screen.getByRole('heading', { name: 'Dibujando en Compose', exact: true }).closest('article')!;
+    expect(entry.querySelector('time')).toHaveAttribute('datetime', '2024-08');
+    expect(within(entry).getByRole('link', { name: 'Grabación' })).toHaveAttribute('href', 'https://www.youtube.com/watch?v=CIYwuexLjN4');
+    expect(within(entry).getByText('DroidesChile — Meetup Agosto 2024')).toBeInTheDocument();
+  });
+
+  it.each(['es', 'en'])('keeps original tutorial titles under a localized practice heading in %s', (locale) => {
+    render(<TalksPage params={{ locale }} />);
+    const entry = screen.getByRole('heading', { name: 'Compose Multiplatform: Dibujando gráficos para Android y iOS' }).closest('article')!;
+    const practice = within(entry).getByRole('region', { name: locale === 'es' ? 'Practica este tema' : 'Practice this topic' });
+    expect(within(practice).getAllByRole('link')).toHaveLength(3);
+    expect(within(practice).getByRole('link', { name: /Bonus Track: Llevando el Temporizador a iOS con Compose Multiplatform/ })).toHaveAttribute('lang', 'es');
+    expect(within(practice).getByText(locale === 'es' ? 'Video · Español' : 'Video · Spanish')).toBeInTheDocument();
+    expect(within(practice).getAllByText(locale === 'es' ? 'Serie · Español' : 'Series · Spanish')).toHaveLength(2);
+    expect(within(entry).queryByRole('link', { name: locale === 'es' ? 'Grabación' : 'Recording' })).not.toBeInTheDocument();
+  });
+
+  it('shows practice groups only for appearances with selected resources', () => {
+    render(<TalksPage params={{ locale: 'es' }} />);
+    expect(screen.getAllByRole('region', { name: 'Practica este tema' })).toHaveLength(3);
+    const nerdearla = screen.getByRole('heading', { name: /¿Un futuro sin juniors/ }).closest('article')!;
+    expect(within(nerdearla).queryByRole('region')).not.toBeInTheDocument();
+    expect(document.querySelector('iframe')).not.toBeInTheDocument();
+  });
+
+  it('resolves every resource reference once and retains evidence and original titles', () => {
+    expect(new Set(talkResources.map((resource) => resource.id)).size).toBe(talkResources.length);
+    for (const talk of talks) {
+      const selected = relatedResourcesFor(talk);
+      expect(selected.map((resource) => resource.id)).toEqual(talk.relatedResourceIds || []);
+      expect(new Set(selected.map((resource) => resource.url)).size).toBe(selected.length);
+    }
+    for (const resource of talkResources) {
+      expect(resource.title.length).toBeGreaterThan(3);
+      expect(resource.url).toMatch(/^https:\/\/www\.youtube\.com\/(watch\?v=|playlist\?list=)/);
+      expect(resource.provenance.source).toBe(resource.url);
+      expect(resource.provenance.note.length).toBeGreaterThan(30);
+      expect(['video', 'series']).toContain(resource.kind);
+    }
   });
 });

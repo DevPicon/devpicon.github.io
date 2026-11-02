@@ -6,7 +6,7 @@ Reviewed: 2026-11-01 (America/Santiago).
 
 `src/data/talks.json` contains one past appearance per event, stable IDs, original title, material language, event date at supported precision, resources and per-entry provenance. UI language does not alter the title. A material-language badge does not claim that a recording was spoken in that language when only the slides were inspected. Unconfirmed modality is omitted.
 
-The first selection contains 15 appearances. Event years/months may be grounded in Armando's slide archive; individual days are used only when an event-specific cover or explicit description supports them. Speaker Deck upload dates and Google Drive timestamps are not occurrence dates. Partial dates sort within their year using zero padding solely as a deterministic tie-break; an unknown month/day is never displayed as an invented date.
+The first selection contained 15 appearances; the YouTube increment adds one confirmed appearance (16 total). Event years/months may be grounded in Armando's slide archive; individual days are used only when an event-specific cover or explicit description supports them. Speaker Deck upload dates and Google Drive timestamps are not occurrence dates. Partial dates sort within their year using zero padding solely as a deterministic tie-break; an unknown month/day is never displayed as an invented date.
 
 Public links point to existing Speaker Deck publications, recordings, code or Sessionize. No Drive sharing changes or reuploads were performed. Some direct video links are older; their association is supported by the original deck description, but player availability may change.
 
@@ -28,3 +28,20 @@ Armando confirmed in this chat on 2026-11-01: Un futuro sin juniors was delivere
 ## Maintenance
 
 For a new appearance: verify title, named event, supported date precision, language evidence and at least one event-specific public resource; include provenance. Use separate appearance IDs for the same talk at different events. Preserve titles in their original language, and retain speaker/coauthor credits where present. Do not add an Event schema with invented full dates. Run the story checks before deployment.
+
+
+## YouTube enrichment — 2026-11-01
+
+Published changes in this increment: add the exact DevFest Santiago 2019 Coroutines recording; add the newly traceable DroidesChile / Dibujando en Compose appearance for August 2024; associate six selected YouTube resources with three appearances (seven resource placements). Tutorial/series links live under Practica este tema / Practice this topic, never in the event recording field. The central resource catalog preserves original titles, kind, language and evidence; appearances keep only resource IDs.
+
+Evidence comes from public channel/playlist metadata and the public player metadata/title/description, not a full viewing or a technical currency audit. The DevFest recording description links the exact Speaker Deck URL. The DroidesChile description explicitly names Armando Picón and Meetup Agosto 2024. Its September upload date is not used as occurrence date. Material-language badges do not certify a recording's spoken language. No new Learn section or dependency changes.
+
+YouTube's current public handle metadata resolves @DevPicon to UCeh_N_RMsApd7mzfqaODVGQ. This is observed live, not the older channel ID in repository guidance. Discovery covered Videos, Streams, Shorts and the public playlists. Only selected, relevant resources are exposed in this increment.
+
+Additional candidates retained for review:
+
+- mDevConf 2023 Día 2 (https://www.youtube.com/watch?v=Omgim5EB-cI): organizer broadcast exists, but the public description does not identify Armando's slot or Version Catalogs. Do not label this six-hour stream as his talk or invent a start timestamp. Its live date does not establish which day Armando presented.
+- Armando Picón en #DroidconDO (https://www.youtube.com/watch?v=QRzIWNKmMLI): a 105-second interview/testimonial. It is not a recording of Kotlin para Desarrolladores Android.
+- Mi Camino hacia Kotlin (2017) - GDG Android Santiago: channel metadata suggests a mapping, but individual metadata extraction encountered an age sign-in requirement. No cookies/sign-in bypass was used; leave as a candidate for manual review.
+- Gemini Nano/on-device videos are standalone channel content; Armando's confirmation that the remaining proposals have not been delivered at events still applies. Do not turn a video upload into an event appearance.
+- Compose Camp videos provide further event candidates; verify the exact session and date before adding more appearances.
