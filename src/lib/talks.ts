@@ -1,4 +1,5 @@
 import archive from '@/data/talks.json';
+import resourceCatalog from '@/data/talk-resources.json';
 import type { Locale } from '@/i18n';
 
 export interface TalkAppearance {
@@ -11,7 +12,26 @@ export interface TalkAppearance {
   location?: string;
   mode?: 'virtual' | 'inPerson';
   links: { slides?: string; video?: string; session?: string; code?: string };
+  relatedResourceIds?: string[];
   provenance: { sources: string[]; note: string };
+}
+
+export interface TalkResource {
+  id: string;
+  title: string;
+  titleLanguage: 'es' | 'en' | 'pt';
+  language: 'es' | 'en' | 'pt';
+  kind: 'video' | 'series';
+  url: string;
+  provenance: { source: string; note: string };
+}
+
+export const talkResources = resourceCatalog as TalkResource[];
+
+export function relatedResourcesFor(talk: TalkAppearance): TalkResource[] {
+  return (talk.relatedResourceIds || [])
+    .map((id) => talkResources.find((resource) => resource.id === id))
+    .filter((resource): resource is TalkResource => resource !== undefined);
 }
 
 export function sortTalks(appearances: readonly TalkAppearance[]): TalkAppearance[] {
@@ -49,6 +69,8 @@ export const talkLabels = {
     links: { slides: 'Slides', video: 'Grabación', session: 'Sesión', code: 'Código' },
     profiles: 'Más sobre mis charlas',
     speakerProfile: 'Perfil de speaker',
+    practice: 'Practica este tema',
+    resourceKinds: { video: 'Video', series: 'Serie' },
   },
   en: {
     title: 'Talks',
@@ -60,5 +82,7 @@ export const talkLabels = {
     links: { slides: 'Slides', video: 'Recording', session: 'Session', code: 'Code' },
     profiles: 'More about my talks',
     speakerProfile: 'Speaker profile',
+    practice: 'Practice this topic',
+    resourceKinds: { video: 'Video', series: 'Series' },
   },
 };

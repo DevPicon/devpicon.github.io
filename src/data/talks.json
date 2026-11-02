@@ -31,8 +31,13 @@
       "sources": [
         "https://sessionize.com/s/devpicon/compose-multiplatform-dibujando-graficos-para-andr/110403"
       ],
-      "note": "Own archive: 2024/mDevConf - Compose Multiplatform: Dibujando gráficos para Android y iOS/Portfolio. Cover says Saturday November 16, 2024. Sessionize corroborates title, speaker and Spanish, not event/day. No public Drive link is exposed; modality remains unconfirmed."
-    }
+      "note": "Own archive: 2024/mDevConf - Compose Multiplatform: Dibujando gráficos para Android y iOS/Portfolio. Cover says Saturday November 16, 2024. Sessionize corroborates title, speaker and Spanish, not event/day. No public Drive link is exposed; modality remains unconfirmed. Related YouTube tutorials are selected by subject, not identified as this event recording."
+    },
+    "relatedResourceIds": [
+      "compose-possession-chart",
+      "compose-timer-ios",
+      "kmp-from-zero"
+    ]
   },
   {
     "id": "mdevconf-2023-version-catalogs",
@@ -101,14 +106,19 @@
     "date": "2019",
     "event": "GDG Santiago DevFest 2019",
     "links": {
-      "slides": "https://speakerdeck.com/devpicon/coroutines-on-the-way"
+      "slides": "https://speakerdeck.com/devpicon/coroutines-on-the-way",
+      "video": "https://www.youtube.com/watch?v=70EAAhb0FlY"
     },
     "provenance": {
       "sources": [
-        "https://speakerdeck.com/devpicon/coroutines-on-the-way"
+        "https://speakerdeck.com/devpicon/coroutines-on-the-way",
+        "https://www.youtube.com/watch?v=70EAAhb0FlY"
       ],
-      "note": "Speaker Deck description says This was given on GDG Santiago DevFest 2019. Language label describes the inspected slide material, not independently verified spoken language. October 4 is publication date, not asserted occurrence date."
-    }
+      "note": "Speaker Deck description says This was given on GDG Santiago DevFest 2019. Language label describes the inspected slide material, not independently verified spoken language. October 4 is publication date, not asserted occurrence date. YouTube metadata reviewed 2026-11-01: GDG Santiago recording title explicitly names Armando Picon, Coroutines and DevFest Santiago 2019; its description links this exact Speaker Deck presentation. Upload date 2020-02-26 is not the event date."
+    },
+    "relatedResourceIds": [
+      "coroutines-101"
+    ]
   },
   {
     "id": "launchpad-santiago-2019",
@@ -278,5 +288,27 @@
       "note": "Public deck title and description identify Ágiles 2014 Medellín and an experience report. Keep year precision rather than deck upload day."
     },
     "location": "Medellín, Colombia"
+  },
+  {
+    "id": "droides-chile-2024-compose",
+    "title": "Dibujando en Compose",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2024-08",
+    "event": "DroidesChile — Meetup Agosto 2024",
+    "links": {
+      "video": "https://www.youtube.com/watch?v=CIYwuexLjN4"
+    },
+    "relatedResourceIds": [
+      "compose-drawing-basics",
+      "compose-possession-chart",
+      "compose-rest-timer"
+    ],
+    "provenance": {
+      "sources": [
+        "https://www.youtube.com/watch?v=CIYwuexLjN4"
+      ],
+      "note": "Organizer video reviewed 2026-11-01: channel #DroidesChile (UCcJAqvVJxLUVMuXK95Zbc8w), title Dibujando en Compose, description Título: Dibujando en Jetpack Compose / Speaker: Armando Picón / Meetup Agosto 2024. Own archive 2024/Dibujando en Compose/DroidesStgo - Dibujando en Compose corroborates speaker/title. Video uploaded September 23, 2024, which is not the occurrence month. Exact day, venue and physical/remote mode remain unconfirmed. Tutorial/series links are thematic resources, not recordings of this appearance."
+    }
   }
 ]

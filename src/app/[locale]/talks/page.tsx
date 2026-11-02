@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { locales, Locale } from '@/i18n';
-import { talks, talkYears, talkLabels, talkDate, talksUrl, TalkAppearance } from '@/lib/talks';
+import { talks, talkYears, talkLabels, talkDate, talksUrl, relatedResourcesFor, TalkAppearance } from '@/lib/talks';
 
 interface PageProps { params: { locale: string } }
 
@@ -58,6 +58,17 @@ export default function TalksPage({ params }: PageProps) {
                     {labels.links[kind]} <span aria-hidden="true">↗</span>
                   </a>)}
                 </div>
+                {talk.relatedResourceIds?.length ? <section className="talk-practice" aria-labelledby={`practice-${talk.id}`}>
+                  <h4 id={`practice-${talk.id}`}>{labels.practice}</h4>
+                  <ul>
+                    {relatedResourcesFor(talk).map((resource) => <li key={resource.id}>
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer" lang={resource.titleLanguage}>
+                        {resource.title} <span aria-hidden="true">↗</span>
+                      </a>
+                      <span className="talk-resource-meta">{labels.resourceKinds[resource.kind]} · {labels.languages[resource.language]}</span>
+                    </li>)}
+                  </ul>
+                </section> : null}
               </article>
             </li>)}
           </ol>

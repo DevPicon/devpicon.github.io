@@ -1692,3 +1692,35 @@ footer {
   }
   .mobile-nav-link:last-child { border-bottom: 0; }
 }
+
+/* Learning material related to a talk, separate from event resources. */
+.talk-practice {
+  margin-top: 1.5rem;
+  padding: 1.1rem 0 0 1rem;
+  border-left: 2px solid var(--site-accent);
+}
+
+.talk-practice h4 {
+  margin: 0 0 1rem;
+  color: var(--site-muted);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.talk-practice ul { margin: 0; padding: 0; list-style: none; }
+.talk-practice li + li { margin-top: 1rem; }
+
+.talk-practice a {
+  display: inline-block;
+  max-width: 100%;
+  color: var(--site-accent-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.talk-practice a:hover { color: var(--site-ink); }
+.talk-resource-meta { display: block; margin-top: 0.2rem; color: var(--site-muted); font-size: 0.74rem; line-height: 1.5; }
