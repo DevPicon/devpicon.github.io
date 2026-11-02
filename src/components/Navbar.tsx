@@ -19,6 +19,7 @@ export default function Navbar() {
   const navLinks = [
     { label: t('home'), href: '/' + locale },
     { label: t('publications'), href: '/' + locale + '/publications' },
+    { label: t('talks'), href: '/' + locale + '/talks' },
     { label: t('contact'), href: '/' + locale + '/contact' },
   ];
 

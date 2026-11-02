@@ -1,0 +1,282 @@
+[
+  {
+    "id": "nerdearla-argentina-2025",
+    "title": "¿Un futuro sin juniors? Replanteando el desarrollo de software en tiempos de IA",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2025",
+    "event": "Nerdearla Argentina 2025",
+    "links": {
+      "video": "https://nerdearla.com/nerdflix/9YjlJN4pRh0/"
+    },
+    "provenance": {
+      "sources": [
+        "https://nerdearla.com/nerdflix/9YjlJN4pRh0/"
+      ],
+      "note": "Organizer page confirms speaker, title, year, country and Spanish. Armando confirmed on 2026-11-01 that this was virtual. Exact occurrence day remains unknown; do not use recording upload date."
+    },
+    "mode": "virtual"
+  },
+  {
+    "id": "mdevconf-2024-compose",
+    "title": "Compose Multiplatform: Dibujando gráficos para Android y iOS",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2024-11-16",
+    "event": "mDevConf 2024",
+    "links": {
+      "session": "https://sessionize.com/s/devpicon/compose-multiplatform-dibujando-graficos-para-andr/110403"
+    },
+    "provenance": {
+      "sources": [
+        "https://sessionize.com/s/devpicon/compose-multiplatform-dibujando-graficos-para-andr/110403"
+      ],
+      "note": "Own archive: 2024/mDevConf - Compose Multiplatform: Dibujando gráficos para Android y iOS/Portfolio. Cover says Saturday November 16, 2024. Sessionize corroborates title, speaker and Spanish, not event/day. No public Drive link is exposed; modality remains unconfirmed."
+    }
+  },
+  {
+    "id": "mdevconf-2023-version-catalogs",
+    "title": "Scalable dependency management with version catalogs",
+    "titleLanguage": "en",
+    "language": "es",
+    "date": "2023-12",
+    "event": "mDevConf 2023",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/scalable-depency-management-with-version-catalog"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/scalable-depency-management-with-version-catalog"
+      ],
+      "note": "Own archive: 2023/12 Diciembre 2023 - mDevConf/Scalable dependency management with version catalogs. Public slides corroborate title/speaker. Month comes from event folder; December 12 on Speaker Deck is a publication date, not an asserted occurrence day. Spanish material has English/Spanish opening titles."
+    }
+  },
+  {
+    "id": "kotlin-sao-paulo-2020-flow",
+    "title": "Introdução ao Kotlin Flow",
+    "titleLanguage": "pt",
+    "language": "pt",
+    "date": "2020-08",
+    "event": "Kotlin São Paulo",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/introducao-ao-kotlin-flow",
+      "video": "https://www.youtube.com/watch?v=DzxVVD6WAnE",
+      "code": "https://github.com/DevPicon/kotlin-marvel-hero-finder"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/introducao-ao-kotlin-flow",
+        "https://www.youtube.com/watch?v=DzxVVD6WAnE",
+        "https://github.com/DevPicon/kotlin-marvel-hero-finder"
+      ],
+      "note": "Speaker Deck description explicitly names Kotlin São Paulo and the recording. Own event folder: 2020/08 Introdução ao Kotlin Flow. Do not substitute the August 27 publication day for event day. Portuguese slide content inspected; modality unconfirmed."
+    }
+  },
+  {
+    "id": "android-devs-buenos-aires-2020-flow",
+    "title": "Introducción a Kotlin Flow",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2020-08",
+    "event": "Android Devs Buenos Aires",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/introduccion-a-kotlin-flow",
+      "video": "https://youtu.be/q-rYc6ZneV0",
+      "code": "https://github.com/DevPicon/kotlin-marvel-hero-finder"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/introduccion-a-kotlin-flow",
+        "https://youtu.be/q-rYc6ZneV0",
+        "https://github.com/DevPicon/kotlin-marvel-hero-finder"
+      ],
+      "note": "Speaker Deck description explicitly names Android Devs Bs. As. and recording. Own folder 2020/08 Introducción a Kotlin Flow establishes month. August 6 is deck publication day, not asserted event day. Spanish content inspected; modality unconfirmed."
+    }
+  },
+  {
+    "id": "devfest-santiago-2019-coroutines",
+    "title": "Coroutines on the way!",
+    "titleLanguage": "en",
+    "language": "en",
+    "date": "2019",
+    "event": "GDG Santiago DevFest 2019",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/coroutines-on-the-way"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/coroutines-on-the-way"
+      ],
+      "note": "Speaker Deck description says This was given on GDG Santiago DevFest 2019. Language label describes the inspected slide material, not independently verified spoken language. October 4 is publication date, not asserted occurrence date."
+    }
+  },
+  {
+    "id": "launchpad-santiago-2019",
+    "title": "The Journey to reach a good architecture",
+    "titleLanguage": "en",
+    "language": "en",
+    "date": "2019-04",
+    "event": "Google Launchpad Start",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/the-journey-to-reach-a-good-architecture"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/the-journey-to-reach-a-good-architecture"
+      ],
+      "note": "Speaker Deck description explicitly states Google Launchpad Start in Santiago. Own folder 2019/04 - Google Launchpad Santiago supports month. April 12 is publication date, not asserted occurrence day. English slide material inspected; spoken language unconfirmed."
+    },
+    "location": "Santiago, Chile"
+  },
+  {
+    "id": "devfest-lima-2018-builds",
+    "title": "Uncovering the magic behind Android Builds",
+    "titleLanguage": "en",
+    "language": "es",
+    "date": "2018",
+    "event": "DevFest Lima 2018",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/uncovering-the-magic-behind-android-builds-devfest-lima-2018"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/uncovering-the-magic-behind-android-builds-devfest-lima-2018"
+      ],
+      "note": "Public deck title explicitly names DevFest Lima 2018. Spanish source description; own archive 2018/10 Octubre - DevFest 2018 supports the family but does not uniquely date this edition, so keep year precision. Do not label referenced technical videos as recordings of this appearance."
+    },
+    "location": "Lima, Perú"
+  },
+  {
+    "id": "droidfestival-2018-builds",
+    "title": "Uncovering the magic behind Android Builds",
+    "titleLanguage": "en",
+    "language": "en",
+    "date": "2018",
+    "event": "DroidFestival 2018",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/uncovering-the-magic-behind-android-builds-droidfestival-2018"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/uncovering-the-magic-behind-android-builds-droidfestival-2018"
+      ],
+      "note": "Public deck title explicitly names DroidFestival 2018. Kept as a separate event appearance. English slide material; spoken language and modality unconfirmed. Publication date not used as event date."
+    }
+  },
+  {
+    "id": "devhack-2017-kotlin",
+    "title": "Kotlin for Android Developers",
+    "titleLanguage": "en",
+    "language": "es",
+    "date": "2017",
+    "event": "DevHack Webinar",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/webinar-kotlin-for-android-developers",
+      "video": "https://www.youtube.com/watch?v=qg_hm8eYUZA"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/webinar-kotlin-for-android-developers",
+        "https://www.youtube.com/watch?v=qg_hm8eYUZA"
+      ],
+      "note": "Public description explicitly identifies a webinar for DevHack school, Colombia and links the recording. Year from own archive 2017/DevHack Webinar. Spanish slide material inspected."
+    },
+    "mode": "virtual"
+  },
+  {
+    "id": "droidcondo-2017-kotlin",
+    "title": "Kotlin para Desarrolladores Android",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2017",
+    "event": "Droidcon Santo Domingo 2017",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/kotlin-para-desarrolladores-android-droidcondo17",
+      "code": "https://github.com/DevPicon/test-android-marvel-comic"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/kotlin-para-desarrolladores-android-droidcondo17",
+        "https://github.com/DevPicon/test-android-marvel-comic"
+      ],
+      "note": "Public deck title/description names DroidconDO17, Santo Domingo and demo repository. Own archive 2017/Droidcon Santo Domingo corroborates year. Exact date and modality unconfirmed."
+    },
+    "location": "Santo Domingo, República Dominicana"
+  },
+  {
+    "id": "androidtitlan-2017-workshop",
+    "title": "Kotlin Workshop",
+    "titleLanguage": "en",
+    "language": "es",
+    "date": "2017-05-08",
+    "event": "GDG Androidtitlán — Kotlin Workshop",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/kotlin-workshop-for-beginners",
+      "video": "https://www.facebook.com/Centraal/videos/1140682666036740/",
+      "code": "https://github.com/DevPicon/kotlin-workshop"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/kotlin-workshop-for-beginners",
+        "https://www.facebook.com/Centraal/videos/1140682666036740/",
+        "https://github.com/DevPicon/kotlin-workshop"
+      ],
+      "note": "Public description explicitly states the talk was presented May 8, 2017 in Mexico City; event from own folder 2017/GDG Androidtitlán - Kotlin for Android Developers/Kotlin Workshop - GDG Androidtitlán. Spanish slides inspected. Physical/remote modality not asserted solely from city."
+    },
+    "location": "Ciudad de México, México"
+  },
+  {
+    "id": "devfest-cochabamba-2016-kotlin",
+    "title": "Kotlin para Android Developers",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2016-11-25",
+    "event": "DevFest Cochabamba 2016",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/kotlin-para-android-developers"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/kotlin-para-android-developers"
+      ],
+      "note": "Public description explicitly says Charla dada en DevFest Cochabamba 2016 - Bolivia (25/11/16). Language follows Spanish description and presentation context. Modality unconfirmed."
+    },
+    "location": "Cochabamba, Bolivia"
+  },
+  {
+    "id": "agile-day-tacna-2016",
+    "title": "Desarrollo Móvil con Android (...y Firebase!)",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2016",
+    "event": "Agile Day Tacna — AgilePerú Tour 2016",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/desarrollo-movil-con-android-dot-dot-dot-y-firebase"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/desarrollo-movil-con-android-dot-dot-dot-y-firebase"
+      ],
+      "note": "Public description explicitly identifies Agile Day Tacna 2016 / AgilePerú Tour 2016, Tacna. Own archive Google/Android/Agile Day Tacna 2016/Untitled presentation corroborates original title. Exact day/modality unknown."
+    },
+    "location": "Tacna, Perú"
+  },
+  {
+    "id": "agiles-medellin-2014",
+    "title": "En el Cielo y en el Infierno, aplicando el agilismo en todo terreno",
+    "titleLanguage": "es",
+    "language": "es",
+    "date": "2014",
+    "event": "Ágiles 2014",
+    "links": {
+      "slides": "https://speakerdeck.com/devpicon/agiles-2014-medellin-en-el-cielo-y-en-el-infierno-aplicando-el-agilismo-en-todo-terreno"
+    },
+    "provenance": {
+      "sources": [
+        "https://speakerdeck.com/devpicon/agiles-2014-medellin-en-el-cielo-y-en-el-infierno-aplicando-el-agilismo-en-todo-terreno"
+      ],
+      "note": "Public deck title and description identify Ágiles 2014 Medellín and an experience report. Keep year precision rather than deck upload day."
+    },
+    "location": "Medellín, Colombia"
+  }
+]
