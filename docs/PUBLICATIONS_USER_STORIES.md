@@ -27,3 +27,13 @@ As a reader arriving from search or a shared link, I want correct article metada
 Acceptance: each language has its own canonical, hreflang alternatives, title, description and Article structured data. A sitemap includes both indexes and articles. Existing production content is preserved. Deployment is verified against the actual public URLs.
 
 Tests: inspect generated HTML metadata and structured data, run the existing test suite and production build, and verify production HTTP responses after deployment.
+
+## US-04: Recognize the article when reading or sharing it
+
+As a reader, I want the approved editorial illustration on either language version and in shared-link previews, so I can recognize the article across platforms.
+
+Scope: add the approved image below the article header; expose the image in Open Graph, Twitter and Article metadata. Preserve the article text, canonical URLs and existing dependencies.
+
+Acceptance: both locales show the same responsive image without cropping its content, with localized alt text and explicit dimensions. The social image is publicly accessible and metadata uses an absolute URL. Image loading does not shift the article layout.
+
+Checks: existing Jest tests and production build; inspect generated image metadata, desktop/mobile rendering and public asset response after deployment.

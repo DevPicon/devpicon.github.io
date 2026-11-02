@@ -7,11 +7,28 @@ export interface Publication {
   date: string;
   title: Record<Locale, string>;
   summary: Record<Locale, string>;
+  cover: {
+    src: string;
+    social: string;
+    width: number;
+    height: number;
+    alt: Record<Locale, string>;
+  };
 }
 
 export const publications: Publication[] = [{
   slug: 'ai-assisted-engineering',
   date: '2026-11-01',
+  cover: {
+    src: '/images/publications/ai-assisted-engineering.webp',
+    social: 'https://picon.dev/images/publications/ai-assisted-engineering-social.jpg',
+    width: 1600,
+    height: 837,
+    alt: {
+      es: 'Un compás, piezas sueltas, una rejilla de inspección y una estructura ensamblada, conectados por una línea que representa un ciclo de ingeniería.',
+      en: 'A drafting compass, loose pieces, an inspection grid and an assembled structure, connected by a line representing an engineering cycle.',
+    },
+  },
   title: {
     en: 'AI Can Write More of the Code. We Still Have to Engineer the System.',
     es: 'La IA puede escribir más código. Seguimos teniendo que hacer ingeniería.',

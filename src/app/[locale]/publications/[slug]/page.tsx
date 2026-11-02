@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { locales, Locale } from '@/i18n';
@@ -38,6 +39,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
       authors: ['Armando Picón'],
       locale: locale === 'es' ? 'es_ES' : 'en_US',
       alternateLocale: locale === 'es' ? 'en_US' : 'es_ES',
+      images: [{ url: publication.cover.social, width: 1200, height: 630, alt: publication.cover.alt[locale] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: publication.title[locale],
+      description: publication.summary[locale],
+      images: [{ url: publication.cover.social, alt: publication.cover.alt[locale] }],
     },
   };
 }
@@ -51,6 +59,7 @@ export default function PublicationPage({ params }: PageProps) {
     '@context': 'https://schema.org', '@type': 'Article',
     headline: publication.title[locale], description: publication.summary[locale],
     datePublished: publication.date, inLanguage: locale,
+    image: publication.cover.social,
     author: { '@type': 'Person', name: 'Armando Picón', url: 'https://picon.dev/' },
     mainEntityOfPage: publicationUrl(locale, publication.slug),
   };
@@ -67,6 +76,17 @@ export default function PublicationPage({ params }: PageProps) {
         <p className="publication-meta">Armando Picón <span aria-hidden="true">·</span> <time dateTime={publication.date}>{publicationDate(publication.date, locale)}</time></p>
         <p className="publication-summary">{publication.summary[locale]}</p>
       </header>
+      <figure className="publication-cover">
+        <Image
+          src={publication.cover.src}
+          alt={publication.cover.alt[locale]}
+          width={publication.cover.width}
+          height={publication.cover.height}
+          priority
+          sizes="(max-width: 800px) calc(100vw - 2.2rem), 760px"
+        />
+        <figcaption>{locale === 'es' ? 'Intención, generación, verificación y decisión. Ilustración generada con IA.' : 'Intent, generation, verification and decision. AI-generated illustration.'}</figcaption>
+      </figure>
       <PublicationContent markdown={readPublication(publication, locale)} />
     </article>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
