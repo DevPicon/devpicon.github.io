@@ -8,17 +8,18 @@
     "event": "DevFest 2026: Sureste de México Virtual",
     "mode": "virtual",
     "links": {
-      "slides": "https://docs.google.com/presentation/d/1dA9T4Be0Aoyo97mGu_wOyQYxakfcUhf_Vg_a6c6ud7c/edit",
+      "slides": "https://docs.google.com/presentation/d/e/2PACX-1vRvfSx76mk64oG6MK7sKBCRJAlh76fGJgt3024AOyhuLgD0UxmSEst07b4cN_9V_6YqfUsFi2uA6B0t/pub?start=false&loop=false&delayms=3000",
       "video": "https://youtu.be/5scZ_jjWXzM?t=29135",
       "session": "https://gdg.community.dev/events/details/google-gdg-villahermosa-presents-devfest-2026-sureste-de-mexico-virtual/"
     },
     "provenance": {
       "sources": [
         "https://gdg.community.dev/events/details/google-gdg-villahermosa-presents-devfest-2026-sureste-de-mexico-virtual/",
+        "https://docs.google.com/presentation/d/e/2PACX-1vRvfSx76mk64oG6MK7sKBCRJAlh76fGJgt3024AOyhuLgD0UxmSEst07b4cN_9V_6YqfUsFi2uA6B0t/pub?start=false&loop=false&delayms=3000",
         "https://docs.google.com/presentation/d/1dA9T4Be0Aoyo97mGu_wOyQYxakfcUhf_Vg_a6c6ud7c/edit",
         "https://youtu.be/5scZ_jjWXzM?t=29135"
       ],
-      "note": "Organizer page confirms the November 13 virtual event hosted by GDG Villahermosa. The speaker confirms delivery and identifies this as the second version of the talk. Original Spanish title comes from the preparation material. On 2026-11-16 the speaker confirmed the recording remains visible and supplied the exact start at 29135 seconds. Slides correspond to the Mexico edition; the recording is the organizer livestream, not an edited upload on the speaker channel."
+      "note": "Organizer page confirms the November 13 virtual event hosted by GDG Villahermosa. The speaker confirms delivery and identifies this as the second version of the talk. Original Spanish title comes from the preparation material. On 2026-11-16 the speaker confirmed the recording remains visible and supplied the exact start at 29135 seconds. Slides correspond to the Mexico edition; the recording is the organizer livestream, not an edited upload on the speaker channel. The speaker requested Publish to the web; on 2026-11-16 its published URL was verified without authentication and general access on the original was reduced from anyone-writer to anyone-reader, preserving named account permissions."
     }
   },
   {
@@ -31,15 +32,16 @@
     "location": "Santiago, Chile",
     "mode": "inPerson",
     "links": {
-      "slides": "https://docs.google.com/presentation/d/1aqL0Qkbi37CMAfbF4HZOAj8W3FsD8NaAgtUUiwBa5aI/edit",
+      "slides": "https://docs.google.com/presentation/d/e/2PACX-1vTyX6YzpCiJZhupAZ0j3GcAmn7pQYzjh-5vcTZ2QIJyXdlMjBgp5c--10tj8ufj6-0dVJipMErzj7t6/pub?start=false&loop=false&delayms=3000",
       "session": "https://gdgsantiagodechile.github.io/devfestsantiago26/"
     },
     "provenance": {
       "sources": [
         "https://gdgsantiagodechile.github.io/devfestsantiago26/",
+        "https://docs.google.com/presentation/d/e/2PACX-1vTyX6YzpCiJZhupAZ0j3GcAmn7pQYzjh-5vcTZ2QIJyXdlMjBgp5c--10tj8ufj6-0dVJipMErzj7t6/pub?start=false&loop=false&delayms=3000",
         "https://docs.google.com/presentation/d/1aqL0Qkbi37CMAfbF4HZOAj8W3FsD8NaAgtUUiwBa5aI/edit"
       ],
-      "note": "Official agenda confirms November 7, 2026 in Santiago and GDG Santiago de Chile as organizer. The speaker confirms the in-person delivery. Original Spanish title comes from the preparation material. Slides correspond to the original Santiago edition; no recording is asserted for this appearance."
+      "note": "Official agenda confirms November 7, 2026 in Santiago and GDG Santiago de Chile as organizer. The speaker confirms the in-person delivery. Original Spanish title comes from the preparation material. Slides correspond to the original Santiago edition; no recording is asserted for this appearance. The speaker requested Publish to the web; on 2026-11-16 its published URL was verified without authentication and general access on the original was reduced from anyone-writer to anyone-reader, preserving named account permissions."
     }
   },
   {
