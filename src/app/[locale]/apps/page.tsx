@@ -127,13 +127,13 @@ export default function AppsPage({ params }: PageProps) {
         </div>
         <article className="mt-6 rounded-2xl border border-gray-200 p-6 dark:border-gray-800" aria-labelledby="app-devpicon-content">
           <p className="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-            {locale === 'es' ? 'Integración interna · Sandbox pendiente' : 'Internal integration · Sandbox pending'}
+            {locale === 'es' ? 'Integración interna · Sandbox conectado' : 'Internal integration · Sandbox connected'}
           </p>
           <h2 id="app-devpicon-content" className="mb-3 text-2xl font-bold text-gray-900 dark:text-gray-100">DevPicon Content</h2>
           <p className="mb-5 text-gray-700 dark:text-gray-300">
             {locale === 'es'
-              ? 'Integración experimental de TikTok mediante Composio para el flujo editorial de DevPicon. Sin conexión de TikTok validada ni aprobación de producción.'
-              : 'Experimental TikTok integration through Composio for the DevPicon editorial workflow. No validated TikTok connection or production approval.'}
+              ? 'Integración experimental de TikTok mediante Composio para el flujo editorial de DevPicon. Lectura de perfil y estadísticas validada en el sandbox; sin aprobación de producción.'
+              : 'Experimental TikTok integration through Composio for the DevPicon editorial workflow. Profile and statistics reads validated in the sandbox; no production approval.'}
           </p>
           <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="DevPicon Content">
             <a className="font-semibold text-indigo-700 underline underline-offset-4 dark:text-indigo-300" href={`/${locale}/apps/devpicon-content/`}>
