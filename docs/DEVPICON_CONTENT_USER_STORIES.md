@@ -4,7 +4,7 @@ Fecha: 24 de noviembre de 2026.
 
 ## Alcance
 
-Publicar información bilingüe y URLs estables para DevPicon Content, la integración experimental de TikTok operada por Armando Picón mediante Composio. No es un SaaS abierto al público. La aplicación y el sandbox existen en TikTok Developers; todavía no hay conexión de TikTok validada ni aprobación de producción.
+Publicar información bilingüe y URLs estables para DevPicon Content, la integración experimental de TikTok operada por Armando Picón mediante Composio. No es un SaaS abierto al público. La aplicación y el sandbox existen en TikTok Developers. La conexión de @devpicon quedó validada mediante una lectura de perfil y estadísticas; no hay aprobación de producción ni prueba de publicación.
 
 No desarrollar un editor, servidor OAuth o sistema de publicación nuevo. No modificar las políticas existentes de la web, Velo o Markdown Viewer. No afirmar cumplimiento legal certificado ni aprobación de TikTok.
 
@@ -15,11 +15,11 @@ No desarrollar un editor, servidor OAuth o sistema de publicación nuevo. No mod
 Como visitante o revisor, quiero identificar quién opera DevPicon Content, su finalidad y estado real para entender qué servicio describen los documentos.
 
 - Ruta pública `/es/apps/devpicon-content/` y equivalente `/en/`.
-- Explicar uso interno, Composio y sandbox pendiente sin presentar funciones como verificadas.
+- Explicar uso interno, Composio y estado del sandbox; distinguir lectura de datos validada de publicación no probada.
 - Enlaces visibles a términos, privacidad y contacto, sin abrir menús.
 - Mantener la navegación principal existente y añadir la ficha al índice de apps.
 
-Casos: abrir ambas rutas sin sesión; comprobar enlaces; verificar que el estado de TikTok es explícito.
+Casos: abrir ambas rutas sin sesión; comprobar enlaces; verificar que el estado de TikTok es explícito y que ninguna página sigue indicando conexión pendiente tras la validación.
 
 ### HU-2: entender el tratamiento de datos
 
@@ -68,3 +68,7 @@ Las reglas de TikTok excluyen apps privadas/personales de aprobación de producc
 - Inspección del HTML exportado: un H1 por página, canonical de cada idioma y enlaces internos resueltos.
 - Chrome: lectura de la presentación en escritorio y privacidad en móvil (390 px), sin desbordamiento horizontal (ancho del documento 375 px); cambio de idioma mantuvo la ruta de privacidad.
 - Las políticas de otras apps y la navegación principal no se modificaron.
+
+## Validación de la conexión del sandbox
+
+El 24 de noviembre de 2026 se guardó Direct Post únicamente en el sandbox y se autorizó OAuth para @devpicon. Composio confirmó conexión activa y `TIKTOK_GET_USER_STATS` devolvió el usuario correcto y sus estadísticas. No se ejecutaron herramientas de carga ni publicación. La descripción pública se actualiza para reflejar esa lectura validada y el permiso `video.publish`; las restricciones de producción siguen vigentes.
