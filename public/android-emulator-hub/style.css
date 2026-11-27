@@ -56,3 +56,6 @@ footer{gap:24px;border-top:1px solid var(--line);padding-block:24px;font-size:.9
   overflow-wrap: anywhere;
   user-select: all;
 }
+
+footer { flex-wrap: wrap; }
+.attribution { flex-basis: 100%; font-size: .8125rem; }
