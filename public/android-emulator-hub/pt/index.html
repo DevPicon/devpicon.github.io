@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Emulator Hub for Android para macOS</title>
+<meta name="description" content="Crie e controle emuladores Android em uma única janela no Mac. Veja as capturas de tela do Emulator Hub for Android e experimente a versão em desenvolvimento.">
+<link rel="canonical" href="https://picon.dev/android-emulator-hub/pt/">
+<link rel="alternate" hreflang="es" href="https://picon.dev/android-emulator-hub/">
+<link rel="alternate" hreflang="en" href="https://picon.dev/android-emulator-hub/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://picon.dev/android-emulator-hub/pt/">
+<link rel="icon" href="../assets/icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#principal">Pular para o conteúdo</a>
+<header class="wrap bar">
+<a class="brand" href="#principal"><img src="../assets/icon.png" width="38" height="38" alt="">Emulator Hub for Android™</a>
+<nav aria-label="Navegação principal"><a href="#interfaz">Interface</a><a class="navlink" href="#probar">Testar no meu Mac</a></nav>
+<nav class="languages" aria-label="Idiomas"><a href="/android-emulator-hub/" hreflang="es" lang="es">Español</a><a href="/android-emulator-hub/en/" hreflang="en" lang="en">English</a><a href="/android-emulator-hub/pt/" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português</a></nav>
+</header>
+<main id="principal">
+<section class="hero wrap">
+<div class="intro"><p class="status"><i></i> Versão em desenvolvimento <span>/</span> macOS</p>
+<h1>Seus emuladores Android,<br><em>em uma só janela.</em></h1>
+<p class="lede">Do celular ao dobrável. Alterne entre dispositivos, teste seu app e grave o que acontece na mesma janela do Mac.</p>
+<a class="button" href="#interfaz">Conheça a interface</a></div>
+<figure class="herofig">
+<div class="stage"><a href="../assets/hub-foldable.webp" aria-label="Ampliar a captura do hub com um Pixel Fold"><img src="../assets/hub-foldable.webp" width="2400" height="1600" fetchpriority="high" alt="Emulator Hub for Android com três dispositivos na barra lateral e um Pixel Fold aberto na tela."></a></div>
+<figcaption><b>Pixel Fold · Android API 36.1</b><span>Versão 0.1.0-alpha.1</span></figcaption>
+</figure></section>
+<section id="interfaz" class="features"><div class="wrap">
+<p class="eyebrow">A interface</p><h2>Do perfil de hardware<br>ao primeiro gesto.</h2>
+<p class="summary">Mantenha vários emuladores em execução e escolha qual controlar. Em um dobrável, mude a posição da dobra para ver como o layout se adapta.</p>
+<div class="gallery">
+<figure><a class="shot create" href="../assets/create-avd.webp" aria-label="Ampliar a captura da criação de dispositivo"><img loading="lazy" width="1240" height="1320" src="../assets/create-avd.webp" alt="Formulário de criação com opções de perfil de hardware, imagem do sistema, memória e armazenamento."></a><figcaption><h3>Crie o dispositivo de que você precisa.</h3><p>Escolha um perfil de hardware e uma imagem do Android. Ajuste a RAM e o armazenamento antes de iniciar.</p></figcaption></figure>
+<figure><a class="shot diag" href="../assets/transport-diagnostics.webp" aria-label="Ampliar a captura do diagnóstico"><img loading="lazy" width="2400" height="1600" src="../assets/transport-diagnostics.webp" alt="Painel de diagnóstico da conexão entre o hub e o emulador."></a><figcaption><h3>Descubra onde a conexão falhou.</h3><p>Verifique o ADB, o gRPC e a chegada do primeiro quadro. Reconecte o dispositivo pelo próprio hub.</p></figcaption></figure>
+</div>
+<p class="note">Capturas da versão 0.1.0-alpha.1. Selecione uma imagem para ampliá-la.</p>
+<div class="capture"><h3>Compartilhe o que você viu.</h3><p>Salve uma captura de tela ou grave suas interações em MP4. A gravação continua no emulador escolhido mesmo se você mudar para outro.</p></div>
+</div></section>
+<section class="wrap release" id="probar"><div><p class="eyebrow">Disponível para macOS</p><h2>Experimente nossa versão em desenvolvimento.</h2></div><div><h3>Antes de instalar</h3>
+<ul class="requirements">
+<li><strong>Mac com Apple Silicon.</strong> O DMG da versão 0.1.0-alpha.5 foi compilado para ARM64.</li>
+<li><strong>SDK do Android instalado localmente.</strong> Instale o Android Emulator, o Android SDK Platform-Tools e o Android SDK Command-line Tools (latest).</li>
+<li><strong>JDK 17 ou posterior.</strong> As ferramentas de linha de comando do SDK precisam do Java.</li>
+</ul>
+<h3>Instale com o Homebrew</h3>
+<pre class="brew-command"><code>brew install --cask devpicon/tools/android-emulator-hub</code></pre>
+<p class="installed-name">Esta versão aparece no Mac como Android Emulator Hub.</p>
+<p>Para iniciar seu primeiro emulador, escolha um dispositivo virtual existente ou crie um no hub. Se precisar de uma imagem do Android, você pode baixá-la pelo app.</p>
+<a class="button" href="https://github.com/DevPicon/kasane/releases">Ver versões no GitHub</a></div></section>
+</main>
+<footer class="wrap"><div class="codename"><strong>Codinome do projeto · Kasane <span lang="ja">重ね</span></strong>
+<p><em>Kasane remete à ideia de sobrepor camadas. Cada emulador tem seu lugar no hub, e você escolhe qual aparece em primeiro plano.</em></p></div><a href="https://picon.dev/">Armando Picón</a><a href="https://github.com/DevPicon/kasane">Código-fonte</a><small class="attribution">Android é uma marca comercial da Google LLC.</small></footer>
+</body></html>

@@ -59,3 +59,10 @@ footer{gap:24px;border-top:1px solid var(--line);padding-block:24px;font-size:.9
 
 footer { flex-wrap: wrap; }
 .attribution { flex-basis: 100%; font-size: .8125rem; }
+.bar { flex-wrap:wrap; column-gap:1.5rem; padding-block:.7rem; }
+.bar .brand { margin-right:auto; }
+.bar .languages { gap:.8rem; }
+.languages a { font-size:.875rem; color:var(--muted); }
+.languages [aria-current] { color:var(--ink); text-decoration:underline; text-underline-offset:.25em; }
+.release .installed-name { margin-bottom:1rem; }
+@media(max-width:700px){ .bar .languages { flex-basis:100%; } }
