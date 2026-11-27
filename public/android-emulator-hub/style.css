@@ -66,3 +66,6 @@ footer { flex-wrap: wrap; }
 .languages [aria-current] { color:var(--ink); text-decoration:underline; text-underline-offset:.25em; }
 .release .installed-name { margin-bottom:1rem; }
 @media(max-width:700px){ .bar .languages { flex-basis:100%; } }
+@media (max-width: 380px) {
+  .release h2 { font-size: 2.15rem; overflow-wrap: anywhere; }
+}
